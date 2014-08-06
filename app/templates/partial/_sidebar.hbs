@@ -3,122 +3,65 @@
     <!--side bar-->
     <ul class="sidebar">
         <!--always define class .first for first-child of li element sidebar left-->
-
         <li class="first">
-            <a href="#index" title="基本信息" class="index">
-                <div class="helper-font-24 level1"> <i class="fa fa-home"></i>
+            {{#link-to 'index' class="index" title="基本信息"}}
+                <div class="helper-font-24 level1">
+                    <i class="fa fa-home"></i>
                 </div>
                 <span class="sidebar-text">基本信息</span>
-            </a>
+            {{/link-to}}
             <ul class="inner-sidebar">
                 <li>
-                    <a href="#organization/edit">
-                        <div class="helper-font-24"> <i class="fa fa-edit"></i>
+                    {{#link-to 'ent.edit'}}
+                        <div class="helper-font-24">
+                            <i class="fa fa-edit"></i>
                         </div>
                         <span class="sidebar-text">修改</span>
-                    </a>
+                    {{/link-to}}
                 </li>
             </ul>
         </li>
         <li>
-            <a href="#users" title="成员名单" class="users">
+            {{#link-to 'org.list' class="orgs" title="组织列表"}}
                 <div class="helper-font-24 level1">
                     <i class="fa fa-list"></i>
                 </div>
-                <span class="sidebar-text">成员名单</span>
-            </a>
+                <span class="sidebar-text">社团列表</span>
+            {{/link-to}}
         </li>
         <li>
-            <a href="#activity" title="公告" class="activity">
+            {{#link-to "act" title="公告" class="activity"}}
                 <div class="helper-font-24 level1">
                     <i class="fa fa-dashboard"></i>
                 </div>
                 <span class="sidebar-text">活动列表</span>
-            </a>
+            {{/link-to}}
         </li>
         <li>
-            <a href="#notice" title="公告管理" class="notice">
-                <div class="helper-font-24 level1">
-                    <i class="fa fa-thumbs-up"></i>
-                </div>
-                <span class="sidebar-text">公告管理</span>
-            </a>
-        </li>
-        <li>
-            <a href="#applyform" title="提交申请表" class="applyform">
-                <div class="helper-font-24 level1">
-                    <i class="fa fa-thumbs-up"></i>
-                </div>
-                <span class="sidebar-text">申请表</span>
-            </a>
-        </li>
-        <li>
+          
             <a href="javascript:void(0)" title="赞助管理" class="sponsor">
                 <div class="helper-font-24 level1">
                     <i class="fa fa-thumbs-up"></i>
                 </div>
                 <span class="sidebar-text">赞助事务</span>
-            </a>
             <ul class="inner-sidebar">
                 <li>
-                    <a href="#sponsor">
+                    {{#link-to 'sponsor.list' class="sponsor" title="赞助查看"}}
                         <div class="helper-font-24">
                             <i class="fa fa-thumbs-up"></i>
                         </div>
-                        <span class="sidebar-text">赞助申请</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#sponsor/transaction/negotiationPhase">
-                        <div class="helper-font-24">
-                            <i class="fa fa-thumbs-up"></i>
-                        </div>
-                        <span class="sidebar-text">赞助事务</span>
-                    </a>
+                        <span class="sidebar-text">赞助查看</span>
+                    {{/link-to}}
                 </li>
             </ul>
         </li>
         <li>
-            <a href="javascript:void(0)" title="行政管理" class="admin">
-                <div class="helper-font-24 level1">
-                    <i class="fa fa-thumbs-up"></i>
-                </div>
-                <span class="sidebar-text">行政管理</span>
-            </a>
-            <ul class="inner-sidebar">
-                <li>
-                    <a href="#admin/activity">
-                        <div class="helper-font-24">
-                            <i class="fa fa-thumbs-up"></i>
-                        </div>
-                        <span class="sidebar-text">活动</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#admin/org">
-                        <div class="helper-font-24">
-                            <i class="fa fa-thumbs-up"></i>
-                        </div>
-                        <span class="sidebar-text">组织</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#admin/form">
-                        <div class="helper-font-24">
-                            <i class="fa fa-thumbs-up"></i>
-                        </div>
-                        <span class="sidebar-text">申请表</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="#history" title="操作历史" class="history">
+            {{#link-to 'history' class="history" title="操作历史"}}
                 <div class="helper-font-24 level1">
                     <i class="fa fa-globe"></i>
                 </div>
                 <span class="sidebar-text">操作历史</span>
-            </a>
+            {{/link-to}}
         </li>
     </ul>
     <!--/side bar -->

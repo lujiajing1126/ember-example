@@ -240,7 +240,8 @@ module.exports = function (grunt) {
             options: {
               variables: {
                 ember: 'bower_components/ember/ember.js',
-                ember_data: 'bower_components/ember-data/ember-data.js'
+                ember_data: 'bower_components/ember-data/ember-data.js',
+                ember_auth: 'bower_components/ember-auth/dist/ember-auth.js'
               }
             },
             files: [
@@ -292,9 +293,34 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        coffee: {
+            server: {
+                expand: true,
+                flatten: true,
+                cwd: 'app/emberscript',
+                src: ['*.coffee'],
+                dest: 'app/scripts',
+                ext: '.js'
+            }
+        },
+        emberscript:{
+            options: {
+                bare: false,
+                sourceMap: false
+            },
+            compile: {
+                expand: true,
+                cwd: 'app/emberscript',
+                src: ['**/*.em'],
+                dest: 'app/scripts',
+                ext: '.js'
+            }
+        },
         concurrent: {
             server: [
                 'emberTemplates',
+                'coffee',
+                'emberscript',
                 'compass:server'
             ],
             test: [

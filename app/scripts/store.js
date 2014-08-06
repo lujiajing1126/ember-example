@@ -1,1 +1,4 @@
-Enterpriseedition.ApplicationAdapter = DS.FixtureAdapter;
+(function() {
+  Enterpriseedition.ApplicationAdapter = DS.FixtureAdapter;
+
+}).call(this);

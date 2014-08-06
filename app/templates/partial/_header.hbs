@@ -17,57 +17,7 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <div class="select-menu account-switcher js-menu-container js-select-menu">
-            <span class="minibutton select-menu-button with-gravatar js-menu-target" data-toggle="dropdown">
-                <div class="select-menu-button-gravatar js-select-button-gravatar">
-                    <img alt="{{org.name}}" class=" js-avatar" data-user="{{org.id}}"  src="{{org.logo}}" width="20" height="20"></div>
-                <span class="js-select-button">{{org.name}}</span>
-                <span class="caret"></span>
-            </span>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <div class="select-menu-modal js-navigation-container">
-                    <div class="select-menu-header">
-                        <span class="select-menu-title" id="context-switch-title">切换用户组织</span>
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
-                        </button>
-                    </div>
-                    <!-- /.select-menu-header -->
-                    <div class="select-menu-list">
-                        <div class="select-menu-item js-navigation-item selected" role="menuitem">
-                            <span class="select-menu-item-icon fa fa-check"></span>
-                            <div class="select-menu-item-gravatar">
-                                <img alt="{{org.name}}" class=" js-avatar" data-user="{{org.orgId}}" src="{{org.logo}}" width="20" height="20" />
-                            </div>
-                            <div class="select-menu-item-text">{{org.name}}</div>
-                        </div>
-                        {{#each orgs}}
-                            {{#unless id}}
-                            <a href="javascript:void(0);" role="menuitem" class="select-menu-item js-navigation-item js-navigation-open" data-xx-action="switchOrganization" data-value="{{option.id}}">
-                                <span class="select-menu-item-icon fa fa-check"></span>
-                                <div class="select-menu-item-gravatar">
-                                    <img alt="{{option.name}}" class=" js-avatar" src={{option.logo}} width="20" height="20" />
-                                </div>
-                                <span class="select-menu-item-text">{{option.name}}</span>
-                            </a>
-                            {{/unless}}
-                        {{/each}}
-                        <!-- /.select-menu-item --> </div>
-                    <!-- /.select-menu-list -->
-                    <div class="select-menu-list select-menu-actions ">
-                        <a href="javascript:void(0);" class="select-menu-item select-menu-action js-navigation-item js-navigation-open">
-                            <span class="select-menu-item-icon fa fa-users"></span>
-                            <span class="select-menu-item-text">Manage organizations</span>
-                        </a>
-                        <a href="javascript:void(0);" class="select-menu-item select-menu-action js-navigation-item js-navigation-open" data-xx-action="createOrganization">
-                            <span class="select-menu-item-icon fa fa-plus"></span>
-                            <span class="select-menu-item-text">Create organization</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- /.select-menu-modal --> </ul>
-            <!-- /.select-menu-modal-holder --> </div>
+
         <ul class="nav navbar-nav navbar-right helper-font-16">
             <li id="mailboxButton">
                 <a data-xx-action="toggle">
@@ -84,14 +34,14 @@
                 <ul class="dropdown-menu card">
                     <li>
                         <a href="javascript:void(0);" data-xx-action="personalInfoEdit">
-                            <!-- <i class="fa fa-gear"></i>
-                        -->个人设置
+                            <!-- <i class="fa fa-gear"></i>-->
+                            个人设置
                     </a>
                 </li>
                 <li>
                     <a href="javascript:void(0)" data-xx-action="chgrp">
-                        <!-- <i class="fa fa-refresh"></i>
-                    -->切换组织
+                        <!-- <i class="fa fa-refresh"></i>-->
+                        切换组织
                 </a>
             </li>
             <!-- <li>
@@ -100,8 +50,8 @@
         -->
         <li class="underscore">
             <a href="javascript:void(0)" data-xx-action="logout">
-                <!--  <i class="fa fa-power-off"></i>
-            -->退出登陆
+                <!--  <i class="fa fa-power-off"></i>-->
+                退出登陆
         </a>
     </li>
 </ul>

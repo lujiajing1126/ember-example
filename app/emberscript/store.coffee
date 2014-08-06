@@ -1,0 +1,1 @@
+Enterpriseedition.ApplicationAdapter = DS.FixtureAdapter
