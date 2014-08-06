@@ -1,0 +1,77 @@
+.member-list-content {
+	background-color: #f8f8f8;
+	.member-header {
+		height: 50px;
+		line-height: 50px;
+		padding: 0 20px;
+	}
+	.inline-block {
+		display: inline-block;
+		line-height: 28px;
+		margin-left: 15px;
+		button {
+			border: none;
+			outline: none;
+			border-radius: 5px;
+			color: #fff;
+			.export {
+				background-color: $theme-color;
+			}
+		}
+	}
+}
+.member-content {
+	padding-top: 10px;
+	.member {
+		border-bottom: 1px solid #e6e6e6;
+		margin: 10px  20px 10px 10px;
+		padding-bottom: 10px;
+		overflow: hidden;
+		.focus {
+			width: 80px;
+			height: 80px;
+			overflow: hidden;
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+		.info {
+			margin-left: 100px;
+			width: auto;
+			position: relative;
+			>p {
+				height: 25px;
+				line-height: 25px;
+				margin: 0;
+				color: #888;
+				&.role {
+					span {
+						border-radius: 5px;
+						background-color: #49d0f2;
+						color: #fff;
+						padding: 3px 6px;
+					}
+					span.admin {
+						background-color: #e65c5c;
+					}
+					span.contact {
+						background-color: #99e68a;
+					}
+				}
+			}
+			.esle-wrapper {
+				position: absolute;
+				display: inline-block;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+	.pageination-wrapper {
+		text-align: center;
+	}
+	.pagination {
+		margin: 0 auto;
+	}
+}

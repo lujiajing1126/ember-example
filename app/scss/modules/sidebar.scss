@@ -1,0 +1,276 @@
+div.sidebars {
+	position: fixed;
+	width: 60px;
+	height: 100%;
+	top: 50px;
+	left: 0px;
+	background-color: $theme-color;
+	border-right-color: rgb(230, 230, 230);
+	border-right-style: solid;
+	border-right-width: 1px;
+	box-sizing: border-box;
+	color: rgb(56, 56, 56);
+	display: block;
+	font-family: 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	transition-delay: 0s;
+	transition-duration: 0.25s;
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.7, 0, 0.175, 1);
+	-webkit-transition-delay: 0s;
+	-webkit-transition-duration: 0.25s;
+	-webkit-transition-property: all;
+	-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.175, 1);
+	z-index: 65;
+	ul.sidebar {
+		list-style: none;
+		padding-left: 0px;
+		width: 59px;
+		li {
+			box-sizing: border-box;
+			color: rgb(56, 56, 56);
+			display: list-item;
+			font-family: 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+			font-size: 14px;
+			height: 70px;
+			line-height: 50px;
+			list-style-image: none;
+			list-style-position: outside;
+			list-style-type: none;
+			position: relative;
+			text-align: left;
+			width: 59px;
+			a {
+				border-bottom-color: rgba(0, 0, 0, 0);
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-top-color: rgba(0, 0, 0, 0);
+				border-top-style: solid;
+				border-top-width: 1px;
+				box-sizing: border-box;
+				color: #fff;
+				cursor: pointer;
+				display: block;
+				font-family: 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+				font-size: 14px;
+				height: 70px;
+				line-height: 50px;
+				list-style-image: none;
+				list-style-position: outside;
+				list-style-type: none;
+				margin-right: 0px;
+				overflow-x: visible;
+				overflow-y: visible;
+				padding-bottom: 0px;
+				padding-left: 0px;
+				padding-right: 0px;
+				padding-top: 0px;
+				position: relative;
+				text-align: left;
+				text-decoration: none solid rgb(128, 128, 128);
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				width: 59px;
+				&.active {
+					background-color: #7fe5ff;
+					border-bottom-color: #7fe5ff;
+					border-bottom-style: solid;
+					border-bottom-width: 1px;
+					color: #fff;
+					cursor: default;
+					display: block;
+					height: 70px;
+					margin-right: -1px;
+					margin-top: 0px;
+					width: 60px;
+				}
+				&:hover {
+					color: #fff;
+					background-color: #7fe5ff;
+				}
+				div{
+
+					text-align: center;
+				}
+				div.level1 {
+					-webkit-font-smoothing: antialiased;
+					box-sizing: border-box;
+					cursor: default;
+					display: block;
+					font-family: Teambition-UI-Icons;
+					font-size: 26px;
+					font-style: normal;
+					font-variant: normal;
+					font-weight: normal;
+					height: 44px;
+					line-height: 50px;
+					list-style-image: none;
+					list-style-position: outside;
+					list-style-type: none;
+					margin-right: 10px;
+					speak: none;
+					text-transform: none;
+					white-space: nowrap;
+					width: 60px;
+					i {
+						margin-top: 14px;
+					}
+				}
+				> span {
+					box-sizing: border-box;
+					cursor: default;
+					display: block;
+					font-family: 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', sans-serif;
+					font-size: 12px;
+					font-style: normal;
+					height: 20px;
+					line-height: 20px;
+					list-style-image: none;
+					list-style-position: outside;
+					list-style-type: none;
+					text-align: center;
+					white-space: nowrap;
+					width: 60px;
+				}
+			}
+			&:hover{
+				.inner-sidebar {
+					display: block;
+					left: 100%;
+				}
+			}
+			.inner-sidebar {
+				position: absolute;
+				margin: 0px;
+				padding: 0px;
+				top: 5px;
+				left: 90%;
+				background: rgba(0, 0, 0,.4);
+				list-style: none;
+				z-index: 99;
+				display: none;
+				white-space: nowrap;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				border: 1px solid #999;
+				border-radius: 4px;
+				-webkit-animation-duration: 1s;
+				-moz-animation-duration: 1s;
+				-o-animation-duration: 1s;
+				animation-duration: 1s;
+				-webkit-animation-fill-mode: both;
+				-moz-animation-fill-mode: both;
+				-o-animation-fill-mode: both;
+				animation-fill-mode: both;
+				-webkit-animation-name: fadeInLeft;
+				-moz-animation-name: fadeInLeft;
+				-o-animation-name: fadeInLeft;
+				animation-name: fadeInLeft;
+				line-height: 20px;
+				overflow:hidden;
+				&:before {
+
+					right: 100%;
+					border: solid transparent;
+					content: " ";
+					height: 0px;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+					border-right-width:11px;
+					border-color: rgb(215, 215, 215);
+					border-right-color: #CDCDCD;
+					border-width: 11px;
+					top: 50%;
+					margin-top: -11px;
+				}
+				&:after {
+					right: 100%;
+					border: solid transparent;
+					content: " ";
+					height: 10px;
+					width: 0;
+					position: absolute;
+					pointer-events: none;
+					border-color: rgb(255, 255, 255);
+					border-right-color: #FFFFFF;
+					border-width: 10px;
+					top: 50%;
+					margin-top: -10px;
+				}
+				li {
+					position: relative;
+					margin: 0px;
+					list-style: none;
+					display: inline-block;
+					text-align: center;
+					font-size: 11px;
+					color: #626262;
+					width: 60px;
+					line-height: 20px;
+					height: 60px;
+					a{
+						line-height: 36px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@-webkit-keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0);
+	}
+}
+
+@-moz-keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		-moz-transform: translateX(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		-moz-transform: translateX(0);
+	}
+}
+
+@-o-keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		-o-transform: translateX(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		-o-transform: translateX(0);
+	}
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	-moz-animation-name: fadeInLeft;
+	-o-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+}

@@ -1,0 +1,130 @@
+.card-header.user-cover {
+	background-color: $theme-color;
+	padding: 20px;
+	.card-title {
+		color: #fff;
+		font-size: 20px;
+	}
+	.avatar-wrapper {
+		.avatar {
+			background-size: cover !important;
+			background-repeat: no-repeat !important;
+			background-position: center !important;
+		}
+		.logo {
+			position: relative;
+			margin: 10px auto;
+			width: 120px;
+			height: 120px;
+			font-size: 14px;
+			background-color: #fff;
+			border: 4px solid #fff;
+			border-radius: 50%;
+			.upload{
+				position: absolute;
+				width: 26px;
+				height: 26px;
+				text-align: center;
+				font-size: 18px;
+				display: inline-block;
+				border-radius: 50%;
+				right: 2px;
+				bottom:2px;
+				background-color:#ffffff;
+				cursor: pointer;
+				.fa{
+					color: #999;
+				}
+				&:hover{
+					.fa{
+						color: $theme-color;
+					}
+				}
+			}
+		}
+	}
+	.role {
+		text-align: center;
+		label {
+			color: green;
+			font-size: 14px;
+			background-color: #fff;
+			padding: 3px 10px;
+			border-radius: 5px;
+		}
+	}
+}
+.card-content {
+	padding-top: 10px;
+	.card-row {
+		padding: 5px 20px 5px 50px;
+		font-size: 14px;
+		label {
+			color: $theme-color;
+		}
+		span {
+			color: #666;
+			margin-left: 20px;
+		}
+		.xx-input-label {
+			span {
+				margin-left: 5px;
+			}
+		}
+		.birthday-wrapper, .hometown-wrapper, .tolive-wrapper {
+			.form-control-select {
+				width: 150px;
+				margin-right: 14px;
+			}
+		}
+	}
+	.tips-row {
+		font-size: 14px;
+		color: #888;
+	}
+	.btn-row {
+		text-align: center;
+	}
+	a.icon {
+		-webkit-transition: text-shadow 218ms ease;
+		-moz-transition: text-shadow 218ms ease;
+		-o-transition: text-shadow 218ms ease;
+		transition: text-shadow 218ms ease;
+	}
+	a.icon.icon-white {
+		color: #fff;
+	}
+	.icon-remove:before {
+		content: " ";
+	}
+
+	.xx-form-content{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
+}
+.user-settings-navigation {
+}
+.nav-tabs {
+	border-bottom: 1px solid #ddd;
+	li {
+		width: 33.333333%;
+		float: left;
+		text-align: center;
+		border-radius: 0;
+		a {
+			border-radius: 0;
+		}
+	}
+}
+.nav-tabs:before {
+	content: " ";
+	display: table;
+}
+.nav-tabs:after {
+	content: " ";
+	display: table;
+	clear: both;
+}

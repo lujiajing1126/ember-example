@@ -1,0 +1,291 @@
+body {
+	background-color: #f5f9fa;
+	padding-top: 70px;
+	overflow-x: hidden;
+}
+.input-group-addon{
+	background-color:#fcffff;
+	border-color:#7fe5ff;
+}
+.form-control{
+	border-color:#7fe5ff;
+}
+section.section {
+	padding-left: 100px;
+}
+
+/**
+ * 全局Z-INDEX说明：
+ * modal-bg：1030
+ * modal：1040
+ * alert-msg：1050
+ */
+.modal {
+	z-index: 1040;
+}
+.xx-border-radius {
+	@include border-radius(3px);
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	background-color: #F7F7F7;
+}
+span.divider-vertical {
+	border-left-color: rgb(217, 217, 217);
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+.open > .dropdown-menu {
+	border: 0 none;
+	opacity: .99;
+	filter: alpha(opacity=99);
+	li {
+		height: 50px;
+		a {
+			padding: 15px;
+			line-height: 20px;
+			color: #383838;
+		}
+	}
+}
+$theme-color: #00D3F5;
+$theme-deep-color: #00bbd8;
+$bg-color: #EEEEEE;
+$danger-color: #ff5454;
+$danger-deep-color: #ce0404;
+$success-color: #75db59;
+$no-operator:#aaaaaa;
+.xx-theme-color{
+	color:$theme-color;
+}
+.xx-danger-bg{
+	background-color:$danger-color;
+	color:#fff;
+}
+.xx-logo{
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	&.xx-logo-80{
+		width: 80px;
+		height: 80px;
+	}
+	&.xx-logo-100{
+		width: 100px;
+		height: 100px;
+	}
+	&.xx-logo-120{
+		width: 120px;
+		height: 120px;
+	}
+}
+//标签(目标审核状态之类的)
+.xx-label {
+	font-size: 14px;
+	background-color: #d1d1d1;
+	color: #fff;
+	padding: 3px 5px;
+	border-radius: 5px;
+	background-color:$no-operator;
+	&.active {
+		background-color: $theme-color;
+	}
+	&.xx-label-success {
+		background-color: $success-color;
+	}
+	&.xx-label-error {
+		background-color: $danger-color;
+	}
+	&.xx-label-danger-color{
+		background-color:#fff;
+		color: $danger-color;
+	}
+}
+
+
+//自定义搜索框
+.panel-search-wrapper {
+	position: relative;
+	&.on {
+		.panel-search-box {
+			>input {
+				width: 300px;
+			}
+		}
+		.panel-search-content {
+			display: block;
+		}
+	}
+	&.off {
+		.panel-search-box {
+			>input {
+				width: 150px;
+			}
+		}
+		.panel-search-content {
+			display: none;
+		}
+	}
+	.panel-search-box {
+		height: 30px;
+		padding-left: 20px;
+		>input {
+			height: 30px;
+			padding: 5px 10px;
+			width: 150px;
+			border: none;
+			outline: none;
+			font-size: 14px;
+			padding: 8px;
+			color: #666;
+			padding-left: 10px;
+			-webkit-transition: all .5s;
+			-moz-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s;
+		}
+	}
+	.panel-search-content {
+		display: none;
+		position: absolute;
+		top: 30px;
+		z-index: 102;
+		width: 300px;
+		padding-left: 20px;
+
+		ul, li {
+			text-decoration: none;
+			list-style: none;
+		}
+		.panel-search-list {
+			padding: 0;
+			border-top: 1px solid #f2f2f2;
+			box-shadow:1px 1px 3px #555;
+			li {
+				padding: 5px 10px;
+				line-height: 25px;
+				cursor: pointer;
+				background-color: #f2f2f2;
+			}
+			li:hover {
+				background-color: #49d0f2;
+			}
+			li.disabled {
+				background-color: #f8f8f8;
+			}
+		}
+		.panel-content-control {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			background-color: transparent;
+		}
+	}
+}
+// 自定义版块
+.xx-panel-container {
+	.xx-panel-wrapper {
+		display: inline-block;
+		width: 180px;
+		margin: 10px;
+		.xx-panel-content {
+			position: relative;
+			.xx-panel-header {
+				height: 30px;
+				line-height: 30px;
+				overflow: hidden;
+				background-color: #49d0f2;
+				.xx-panel-title {
+					float: left;
+					width: 150px;
+					text-align: center;
+					color: #fff;
+					padding:0 5px;
+					overflow:hidden;
+					cursor: pointer;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					&.no-operator {
+						width: 100%;
+						float: none;
+					}
+				}
+				.xx-panel-operator {
+					width: 30px;
+					height: 100%;
+					margin-left: 150px;
+					.xx-panel-btn-close {
+						display: inline-block;
+						text-align: center;
+						border: none;
+						outline: none;
+						width: 100%;
+						height: 100%;
+						color: #fff;
+						background-color: #7fe5ff;
+						cursor: pointer;
+					}
+					.xx-panel-btn-close:hover {
+						background-color: #0fb6e0;
+					}
+				}
+			}
+			.xx-panel-body {
+				line-height: 25px;
+				&.flag {
+					z-index: 99;
+					display: none;
+				}
+				&.content {
+					z-index: 100;
+					display: block;
+				}
+				.xx-panel-inner-header {
+					height: 28px;
+					line-height: 28px;
+					color: #fff;
+					padding: 0 10px;
+					&.success {
+						background-color: #02e511;
+					}
+					&.error {
+						background-color: #cc0000;
+					}
+					&.ignore {
+						background-color: #aaa;
+					}
+				}
+				.xx-panel-inner-body {
+					padding: 0 10px;
+					background-color: #f7f7f7;
+					color: #888;
+					height: 100px;
+					overflow: hidden;
+					overflow-y: auto;
+				}
+				.xx-panel-footer {
+					padding: 0 10px;
+					background-color: #e6e6e6;
+					color: #49d0f2;
+					>a {
+						color: #49d0f2;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+	.xx-panel-wrapper:hover {
+		.xx-panel-body {
+			&.content {
+				display: block;
+			}
+			&.flag {
+				display: none;
+			}
+		}
+	}
+}

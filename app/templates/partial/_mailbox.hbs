@@ -1,0 +1,52 @@
+<div class="mailbox">
+<header class="inbox-header">
+	<div class="container inbox-wrap">
+		<div class="messages-wrapper">
+			<div class="messages-header clearfix">
+				<span class="inbox-title">我的消息</span>
+				<div class="pull-right">
+					<a class="read-all-handler">
+						<span class="fa fa-check"></span>标记全部已读
+					</a>
+					<span class="divider-vertical">&nbsp;</span>
+					<a class="clear-readed-handler hinted">
+						<span class="fa fa-trash-o"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="message-detail-wrapper">
+			<div class="detail-header"></div>
+		</div>
+	</div>
+</header>
+<div class="container inbox-content">
+	<div class="messages-wrapper">
+		<ul class="messages thin-scroll">
+			{{#if messages}}
+				{{#each messages}}
+				<li class="message-view clearfix card read">
+					<div class="avatar img-circle img-24 pull-left" style="background-image: url(https://striker.teambition.com/thumbnail/04/bc/f62ee3a8621f6d5ab8da7b0a93d7.jpg/w/200/h/200);"></div>
+					<div class="message-detail">
+						<p class="message-content">{{sender}}给你发送了一条消息</p>
+						<p class="object-content muted">
+							<span class="icon icon-board-bold"></span>发送时间: {{dateOfReciption.$date}}<span class="unread-activities-count pull-right"></span>
+						</p>
+						<a class="delete-handler icon icon-remove hinted" data-title="删除信息" data-gta="event" data-label="delete message">
+						</a>
+					</div>
+				</li>
+				{{/each}}
+			{{else}}
+				您还没有新消息~
+			{{/if}}
+		</ul>
+	</div>
+	<div class="message-detail-wrapper clearfix">
+		<div class="detail-panel"></div>
+	</div>
+</div>
+<footer class="inbox-footer" data-xx-action="contract">
+	<span class="fa fa-chevron-up"></span>
+</footer>
+</div>

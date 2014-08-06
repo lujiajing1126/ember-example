@@ -1,0 +1,196 @@
+body {
+	font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
+}
+ul, li {
+	list-style: none;
+}
+ui.hotitem, ui.intritem {
+	line-height: 30px;
+}
+div.white {
+	background-color: white;
+}
+input, textarea {
+	border: solid 1px #E5E5E5;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px !important;
+	-moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px !important;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px !important;
+}
+.btn-color:hover, .subscribe-btn:hover {
+	background: -webkit-linear-gradient(#0488cd, #2eaef0);
+	background: -moz-linear-gradient(#0488cd, #2eaef0);
+	background: -o-linear-gradient(#0488cd, #2eaef0);
+	background: -ms-linear-gradient(#0488cd, #2eaef0);
+	background: linear-gradient(#0488cd, #2eaef0);
+}
+.btn-color, .subscribe-btn {
+	background: -webkit-linear-gradient(#2eaef0, #0488cd);
+	background: -moz-linear-gradient(#2eaef0, #0488cd);
+	background: -o-linear-gradient(#2eaef0, #0488cd);
+	background: -ms-linear-gradient(#2eaef0, #0488cd);
+	background: linear-gradient(#2eaef0, #0488cd);
+	border: 1px solid #2f7295;
+	-webkit-box-shadow: inset 0 1px 1px 0 #9fcee7, 0 2px 0 -1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 1px 0 #9fcee7, 0 2px 0 -1px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+.bottom-pad {
+	margin-bottom: 60px;
+}
+.btn-normal {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 12px 30px;
+}
+.btn-color {
+	color: #fff !important;
+	text-shadow: 0 1px #555 !important;
+}
+.btn-color, .btn-grey {
+	-webkit-transition: all .5s ease-in-out !important;
+	-moz-transition: all .5s ease-in-out !important;
+	-o-transition: all .5s ease-in-out !important;
+	-ms-transition: all .5s ease-in-out !important;
+	transition: all .5s ease-in-out !important;
+}
+.btn-special, .btn-normal, .btn-small, .btn-large, .comment-des, .steps .popup, .testimonial p, .contact-box {
+	border-radius: 3px;
+}
+.row.no-margin {
+	margin-left: 0;
+	margin-right: 0;
+	.no-padding {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+.center{
+	text-align:center;
+}
+.white-color {
+	color: #fff;
+}
+.theme-color {
+	color: #49d0f2;
+}
+.prompt-color {
+	color: #20af1d;
+}
+.prompt {
+	color: #20af1d;
+	font-size: 12px;
+}
+.theme-bg-color {
+	background-color: #49d0f2;
+}
+.width-100 {
+	width: 100px;
+}
+.width-140 {
+	width: 140px;
+}
+.width-150 {
+	width: 150px;
+}
+.width-200 {
+	width: 200px;
+}
+.alert-msg {
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	z-index:1050;//保证在最上面
+	.msg-wrapper {
+		width: 600px;
+		margin: 0 auto;
+	}
+}
+.content-nav {
+	background-color: #fbfbfb;
+	height: 50px;
+	text-align: center;
+	margin-bottom: 20px;
+	.activity-status {
+		display: inline-block;
+		margin: 10px 30px;
+		padding: 4px 10px;
+		border: 1px solid #49d0f2;
+		border-radius: 8px;
+		color: #49d0f2;
+		background-color: #fff;
+		&.active {
+			color: #fff;
+			background-color: #49d0f2;
+		}
+		span {
+			font-size: 16px;
+			a{
+				font-size: 15px;
+			}
+		}
+	}
+}
+.content-header {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #49d0f2;
+	.content-title {
+		label {
+			font-size: 12px;
+			color: #888;
+			font-weight: normal;
+			&.theme-color {
+				color: #49d0f2;
+			}
+		}
+	}
+}
+.content-body {
+	margin-top: 20px;
+	.input-group {
+		margin-bottom: 10px;
+	}
+}
+.search-form {
+	display: inline-block;
+	border: 1px solid #f2f2f2;
+	background-color: #fff;
+	border-radius: 5px;
+	padding:3px 5px;
+	>i {
+		background-color: #fff;
+		padding: 5px 10px;
+	}
+	>i:hover {
+		color: red;
+		cursor: pointer;
+	}
+	>input {
+		border: none;
+		outline: none;
+		-webkit-box-shadow: none;
+		font-size: 14px;
+		color: #666;
+		background-color: #fff;
+		width: 80px;
+		padding-left: 10px;
+		transition: all .5s;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		-o-transform: all .5s;
+	}
+	>input.search-box {
+		-webkit-box-shadow: none !important;
+		-o-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		box-shadow: none !important;
+	}
+	>input:focus {
+		width: 120px;
+	}
+}
+
+

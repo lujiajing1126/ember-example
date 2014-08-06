@@ -1,0 +1,41 @@
+.xx-label-warning {
+	color: red;
+	font-size: 12px;
+}
+.xx-btn-warning {
+	background-color: red;
+	color: #fff;
+	width: 100px;
+	height: 40px;
+	font-size: 12px;
+	padding: 5px;
+}
+.xx-btn-confirm {
+	background-color: #7BF089;
+	color: #fff;
+	width: 100px;
+	height: 40px;
+	font-size: 12px;
+	padding: 5px;
+}
+span#goback {
+	cursor: pointer;
+	height: 50px;
+	width: 70px;
+	line-height: 50px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: $bg-color;
+	color: #00D3F5;
+}
+.form-group {
+	.row {
+		div[class^="col-"] {
+			margin-top: 8px;
+		}
+	}
+	label.control-label {
+		font-size: 18px;
+		color: rgb(0, 211, 245);
+	}
+}
