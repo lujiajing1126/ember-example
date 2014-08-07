@@ -1,6 +1,6 @@
 // Generated on 2014-08-06 using generator-ember 0.8.4
 'use strict';
-var LIVERELOAD_PORT = 35729;
+var LIVERELOAD_PORT = 35730;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
@@ -35,6 +35,14 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass:server']
             },
+            emberscript: {
+                files: ['<%= yeoman.app %>/emberscript/**/*.em'],
+                tasks: ['emberscript']
+            },
+            coffee: {
+                files: ['<%= yeoman.app %>/emberscript/**/*.coffee'],
+                tasks: ['coffee']
+            },
             neuter: {
                 files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
                 tasks: ['neuter']
@@ -53,7 +61,7 @@ module.exports = function (grunt) {
         },
         connect: {
             options: {
-                port: 9000,
+                port: 3000,
                 // change this to '0.0.0.0' to access the server from outside
                 hostname: 'localhost'
             },

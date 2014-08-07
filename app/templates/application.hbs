@@ -1,23 +1,2 @@
 <!-- application template -->
-<!-- mailbox -->
-{{partial "partial/mailbox"}}
-<!-- /mailbox -->
-<!-- section header -->
-<div id="XxHeader">
-{{partial "partial/header"}}
-</div>
-<!-- section content -->
-<section class="section">
-    <!-- span side-left -->
-    {{partial 'partial/sidebar'}}
-    <!-- /span side-left -->
-    
-    <!-- application plug -->
-    <div class="container auth-container">
-        {{outlet}}
-    </div>
-</section>
-
-<!-- section footer -->
-{{partial 'partial/footer'}}
-<div id="loadingModal"></div>
+{{outlet}}

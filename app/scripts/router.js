@@ -1,30 +1,40 @@
 (function() {
-  Enterpriseedition.Router.map(function() {
-    this.route('index', {
+  Enterprise.Router.map(function() {
+    this.resource('login');
+    return this.resource('authenticated', {
       path: '/'
-    });
-    this.resource('ent', function() {
-      return this.route('edit');
-    });
-    this.resource('org', function() {
-      this.route('list');
-      return this.route('show', {
-        path: '/org/:orgId'
+    }, function() {
+      this.resource('logout');
+      this.resource('home');
+      this.resource('ent', function() {
+        return this.route('edit');
+      });
+      this.resource('org', function() {
+        this.route('list');
+        return this.route('show', {
+          path: '/org/:orgId'
+        });
+      });
+      this.resource('act', function() {
+        this.route('list');
+        return this.route('show', {
+          path: '/act/:actId'
+        });
+      });
+      this.resource('sponsor', function() {
+        this.route('list');
+        return this.route('show', {
+          path: '/sponsor/:sponsorId'
+        });
+      });
+      this.resource('history');
+      return this.resource('users', function() {
+        this.route('new');
+        return this.resource('user', {
+          path: '/:user_id'
+        });
       });
     });
-    this.resource('act', function() {
-      this.route('list');
-      return this.route('show', {
-        path: '/act/:actId'
-      });
-    });
-    this.resource('sponsor', function() {
-      this.route('list');
-      return this.route('show', {
-        path: '/sponsor/:sponsorId'
-      });
-    });
-    return this.route('history');
   });
 
 }).call(this);
