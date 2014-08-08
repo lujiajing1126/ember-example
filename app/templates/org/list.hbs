@@ -1,9 +1,10 @@
+<!-- 现有组织表列模板-->
 <!--header start-->
 <header class="content-header clearfix">
 	<div class="content-title pull-left clearfix">
 		<div class="helper-font-24 theme-color">
 			<i class="fa fa-pencil"></i>
-			<span>社团列表（{{organizations.length}}）</span>
+			<span>现有社团（{{model.length}}）</span>
 			<label>本项目由</label>
 			<label class="theme-color">{{lastModifyUser}}</label>
 			<label>在</label>
@@ -21,31 +22,39 @@
 </header>
 <div class="content-body">
 	<div class="xx-orgs">
+		<nav class="row no-margin nav-xx-label">
+			<div class="row">
+				<div class="col-xs-2">
+					<span class="theme-color">组织类型</span>
+				</div>
+				<div class="col-xs-10">
+					<span class="xx-label active">全部</span>
+					<span class="xx-label">讲座</span>
+					<span class="xx-label">讲座</span>
+					<span class="xx-label">讲座</span>
+					<span class="xx-label">讲座</span>
+				</div>
+			</div>
+		</nav>
 		<section class="xx-list-content">
-			{{#if organizations.length}}
-			<span>暂无下级组织申请加入！</span>
-			{{/if}}
+			{{#if model.length}}
 			<div class="row no-margin">
-				{{#each organizations}}
+				{{#each}}
 				<div class="col-xs-6 no-padding">
 					<div class="xx-list-option org-option clearfix">
-						<div class="pull-left focus xx-logo" style="background-image:url(''),url(images/default/2.png);">
+						<div class="pull-left focus xx-logo" style="background-image:url({{org.logo}}),url(images/default/2.png);">
 							<div class="org-type-icon-wrapper right-bottom width30">
 								<div class="org-type-icon academic"></div>
 							</div>
 						</div>
 						<div class="info">
 							<p class="name">
-								<a href="#organization/{{org.id}}">
-									<span class="theme-color xx-org">{{org.name}}</span>
-								</a>
+							{{#link-to 'org.show' id}}
+								<span class="theme-color xx-org">{{name}}</span>
+							{{/link-to}}
 							</p>
 							<p class="type">
-								<span class="">{{org.type}}</span>
-							</p>
-							<p class="">
-								<button class="btn btn-success btn-xs" data-xx-action="acceptApply" data-value="{{org.id}}">接受</button>
-								<button class="btn btn-xs btn-danger" data-xx-action="rejectApply" data-value="{{org.id}}">拒绝</button>
+							<span class="">{{type}}</span>
 							</p>
 						</div>
 					</div>
@@ -53,12 +62,10 @@
 				{{/each}}
 			</div>
 			<div class="row pageination-wrapper">
-				<ul class="pagination">
-					{{#each navs}}
-					 	{{nav}}
-					{{/each}}
-				</ul>
 			</div>
+			{{else}}
+				<span>暂无下级组织！</span>
+			{{/if}}
 		</section>
 	</div>
 </div>

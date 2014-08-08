@@ -17,13 +17,12 @@
 	<form class="">
 		<div class="input-group">
 			<span class="input-group-addon theme-color">活动名称</span>
-			<input type="text" class="form-control" name="name" id="A_NAME" data-validate-type="out" data-validate-rule="require|notNum" placeholder="请填写活动名称（必填项）" value="{{name}}" />
+			<input disabled type="text" class="form-control" name="name" id="A_NAME" {{bind-attr value=name}} />
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">活动地点</span>
 
-			<input type="text" class="form-control" name="location->
-			String" id="A_ADDRESS" data-type="string" data-validate-rule="require" data-validate-type="out" placeholder="请填写活动地点（必填项）" value="{{location}}" />
+			<input type="text" class="form-control" name="location" id="A_ADDRESS" {{bind-attr value=location}} />
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">活动时间</span>
@@ -32,12 +31,12 @@
 					<div class="form-group" >
 						<div class="input-group width-140" >
 							<span class="input-group-addon theme-color">从</span>
-							<input type="text" class="form-control datetimepicker" data-validate-rule="require" data-validate-type="out" data-validate-tips="时间格式不正确" placeholder="活动开始时间" style="width:150px;" name="begin" value="{{begin}}" /></div>
+							<input disabled type="text" class="form-control" style="width:150px;" name="begin" {{bind-attr value=begin}} /></div>
 					</div>
 					<div class="form-group" >
 						<div class="input-group width-140" >
 							<span class="input-group-addon theme-color">至</span>
-							<input type="text" class="form-control datetimepicker" style="width:150px;" data-validate-rule="require" data-validate-type="out" placeholder="活动结束时间" data-validate-tips="时间格式不正确" name="end" value="{{end}}"/>
+							<input disabled type="text" class="form-control" style="width:150px;" name="end" {{bind-attr value=end}}/>
 						</div>
 					</div>
 				</div>
@@ -45,11 +44,11 @@
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">预期人数</span>
-			<input type="text" class="form-control" id="A_NUM" name="numberOfPeople" placeholder="预期人数不填为无穷大" data-tips="格式必须为数字" value="{{numberOfPeople}}" />
+			<input disabled type="text" class="form-control" id="A_NUM" name="numberOfPeople" {{bind-attr value=numberOfPeople}} />
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">校校专座</span>
-			<input type="text" class="form-control" id="A_SEAT" name="numberOfPreservedSeats" placeholder="校校专座不填为零" data-tips="格式必须为数字" value="{{numberOfPreservedSeats}}" />
+			<input type="text" class="form-control" id="A_SEAT" name="numberOfPreservedSeats" {{bind-attr value=numberOfPreservedSeats}} />
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">活动类型</span>
@@ -190,7 +189,7 @@
 					<div class="pull-left upload-file-wrapper">
 						<div class="activity-img drag-to-upload img">
 							{{#if poster}}
-							<img src="/api/event/{{id}}/poster/load" />
+							<img {{bind-attr src=posterSrc}} />
 							{{/if}}
 						</div>
 					</div>
@@ -206,7 +205,7 @@
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">活动简介</span>
-			<textarea class="form-control" name="description" id="Introduction" rows="6" data-validate-rule="require" data-validate-type="out" placeholder="快来介绍一下你要发布的活动吧。">{{description}}</textarea>
+			{{textarea value=description row="3" class="form-control" disabled=true}}
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">活动策划案</span>

@@ -1,0 +1,44 @@
+<!--组织主页-->
+<header class="content-header">
+	<div class="home-org-bg xx-logo" style="background-image:url(images/default/bg01.jpg);"></div>
+	<div class="home-org-base-info row no-margin">
+		<div class="col-sm-2 col-xs-2 home-org-logo-wrapper">
+			<div class="home-org-logo xx-logo xx-logo-100" style="background-image:url(/api/org/{{organizationInfo.id}}/logo?session={{session}}),url(images/default/3.png),url(images/default/31.jpg);"></div>
+			<div class="org-type-icon-wrapper width30 right-bottom-20">
+				<div class="org-type-icon academic"></div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-xs-6">
+			<p>
+				<span class="org-name xx-theme-color">{{name}}</span>
+			</p>
+			<p>
+				{{#if parent}}
+				<span>所属社团目录：{{parent}}</span>
+				{{/if}}
+				{{#if score}}
+				<span class="org-level">社团积分：{{level}}</span>
+				{{/if}}
+			</p>
+		</div>
+		<div class="col-sm-4 col-xs-4">
+			<span> <i class="fa fa-male xx-theme-color"></i>
+				{{numberOfMembers}}
+			</span>
+			<span> <i class="fa fa-eye xx-theme-color"></i>
+				{{numberOfFollowers}}
+			</span>
+			<span>
+				<i class="fa fa-star-half-o xx-theme-color"></i>
+				{{numberOfExecutingEvents}}
+			</span>
+		</div>
+	</div>
+</header>
+<section class="content-body">
+	<div class="home-org-description">{{description}}</div>
+	<div class="home-org-contact">
+		<p>联系人：{{contact}}</p>
+		<p>联系邮箱：{{email}}</p>
+	</div>
+</section>

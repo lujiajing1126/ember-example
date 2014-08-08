@@ -9,11 +9,11 @@ Enterprise.Router.map ->
 			@resource 'password'
 		@resource 'org',->
 			@route 'list'
-			@route 'show', path:'/org/:org_id'
+			@route 'show', path:'/:org_id'
 		@resource 'act',->
-			this.route 'list'
-			this.route 'show', path:'/:act_id'
+			@route 'list'
+			@route 'show', path:'/:act_id'
 		@resource 'sponsor',->
-			this.route 'list'
-			this.route 'show', path:'/:sponsor_id'
+			@route 'list'
+			@route 'show', path:'/:sponsor_id'
 		@resource 'history'

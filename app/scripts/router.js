@@ -13,7 +13,7 @@
       this.resource('org', function() {
         this.route('list');
         return this.route('show', {
-          path: '/org/:org_id'
+          path: '/:org_id'
         });
       });
       this.resource('act', function() {
