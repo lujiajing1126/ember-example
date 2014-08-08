@@ -59,6 +59,23 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        emblem: {
+            compile: {
+                files: {
+                    'path/to/result.js': 'path/to/source.emblem', //1:1 compile
+                    'path/to/another.js': ['path/to/sources/*.emblem', 'path/to/more/*.emblem'] //compile and concat into single file
+                },
+                options: {
+                    root: 'app/templates/',
+                    dependencies: {
+                        jquery: 'app/bower_components/jquery/dist/jquery.min.js',
+                        ember: 'app/bower_components/ember/ember.min.js',
+                        emblem: 'app/bower_components/emblem/dist/emblem.min.js',
+                        handlebars: 'app/bower_components/handlebars/handlebars.js'
+                    }
+                }
+            }
+        },
         connect: {
             options: {
                 port: 3000,

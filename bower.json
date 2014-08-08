@@ -6,7 +6,9 @@
     "handlebars": "1.2.1",
     "ember-data": "1.0.0-beta.7",
     "bootstrap-sass-official": "3.1.1",
-    "ember-auth": "~9.0.7"
+    "ember-auth": "~9.0.7",
+    "emblem": "~0.3.16",
+    "moment": "~2.8.1"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.1.2"

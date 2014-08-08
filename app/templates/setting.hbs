@@ -1,0 +1,137 @@
+<!--社团基础信息页面-->
+<div class="progress-wrap">
+	<div class="progress">
+		<div class="progress-bar progress-bar-striped active"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+			<span class="sr-only">0% Complete</span>
+		</div>
+	</div>
+</div>
+<header class="content-header clearfix">
+	<div class="content-title">
+		<div class="helper-font-24 theme-color"> <i class="fa fa-pencil"></i>
+			<span>编辑资料</span>
+			<label>本项目由</label>
+			<label class="theme-color">校校</label>
+			<label>在</label>
+			<label class="theme-color">2014/06/01</label>
+			<label>进行最后修改。</label>
+		</div>
+	</div>
+</header>
+<div class="content-body">
+	<form class="">
+		<div class="input-group">
+			<span class="input-group-addon theme-color">组织名称</span>
+			<input type="text" class="form-control" name="name" id="A_NAME" data-validate-type="input" data-validate-rule="require" placeholder="请填写组织名称（必填项）" data-tips="组织名称不能为空" value="{{organizationInfo.name}}"/>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">联系邮箱</span>
+			<input type="text" class="form-control" name="email" id="A_Email" data-validate-type="input" data-validate-rule="require|email"  placeholder="请填写组织联系邮箱（必填项）" data-tips="邮箱格式应该如：example@xiaoxiao.la" value="{{organizationInfo.email}}" />
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">自己为联系人</span>
+			<div class="form-control">
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="contact" value="1" />
+					<span>是</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="contact" value="0" checked />
+					<span>否</span>
+				</label>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">组织类型</span>
+			<div class="form-control">
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="学术" checked />
+					<span>学术</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="艺术" checked />
+					<span>艺术</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="体育" checked />
+					<span>体育</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="实践" checked />
+					<span>实践</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="公益" checked />
+					<span>公益</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="其他" checked />
+					<span>其他</span>
+				</label>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">组织Logo</span>
+			<div class="form-control">
+				<div class="upload-file-box org-logo-box">
+					<div class="pull-left upload-file-wrapper">
+						<div class="activity-img">
+							<img id="orgLogo" src="{{organizationInfo.logo}}" />
+							<!-- <img src="images/default/30.jpg"/> -->
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<label class="btn btn-xx-theme btn-sm" for="uploadLogo" data-toggle="tooltip" data-placement="top" data-original-title="上传Logo"> <i class="fa fa-plus"></i>
+							</label>
+							<input type="file" accept="image/*" class="hide" id="uploadLogo" name="uploadPoster" autocomplete="off" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">组织背景</span>
+			<div class="form-control">
+				<div class="upload-file-box activity-bg">
+					<div class="pull-left upload-file-wrapper">
+						<div class="activity-img">
+							<img id="orgBg" src="{{organizationInfo.bg}}" />
+							<!-- <img src="images/default/100.jpg"/> -->
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<label class="btn btn-xx-theme btn-sm" for="uploadBg" data-toggle="tooltip" data-placement="top" data-original-title="上传背景">
+								<i class="fa fa-plus"></i>
+							</label>
+							<input type="file" accept="image/*" class="hide" id="uploadBg" name="uploadPoster" autocomplete="off"  />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">组织简介</span>
+			<textarea class="form-control" name="description" id="A_Introduction" rows="6" placeholder="快来介绍一下你的组织吧。" data-validate-type="input" data-validate-rule="require" data-tips="组织简介不能为空！">{{organizationInfo.description}}</textarea>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">社团目录</span>
+			<div class="form-control">
+				<div class="upload-file-box ">
+					<div class="pull-left upload-file-wrapper"></div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<span class="btn btn-xx-theme btn-sm" title="添加社团目录" data-xx-action="queryAssociationDir" data-toggle="tooltip" data-placement="top" data-original-title="添加社团目录">
+								<i class="fa fa-plus"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group form-submit-group">
+			<button class="btn btn-xx-theme" id="BTN_SAVE" data-xx-action="save" data-toggle="tooltip" data-placement="top" data-original-title="保存">保存</button>
+		</div>
+	</form>
+</div>

@@ -4,19 +4,16 @@ Enterprise.Router.map ->
 	@resource 'authenticated', path: '/', ->
 		@resource 'logout'
 		@resource 'home'
-
-		@resource 'ent', ->
-			@route 'edit'
+		@resource 'setting', ->
+			@resource 'profile'
+			@resource 'password'
 		@resource 'org',->
 			@route 'list'
-			@route 'show', path:'/org/:orgId'
+			@route 'show', path:'/org/:org_id'
 		@resource 'act',->
 			this.route 'list'
-			this.route 'show', path:'/act/:actId'
+			this.route 'show', path:'/:act_id'
 		@resource 'sponsor',->
 			this.route 'list'
-			this.route 'show', path:'/sponsor/:sponsorId'
+			this.route 'show', path:'/:sponsor_id'
 		@resource 'history'
-		@resource 'users', ->
-			@route 'new'
-			@resource 'user', path: '/:user_id'

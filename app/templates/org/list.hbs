@@ -1,0 +1,64 @@
+<!--header start-->
+<header class="content-header clearfix">
+	<div class="content-title pull-left clearfix">
+		<div class="helper-font-24 theme-color">
+			<i class="fa fa-pencil"></i>
+			<span>社团列表（{{organizations.length}}）</span>
+			<label>本项目由</label>
+			<label class="theme-color">{{lastModifyUser}}</label>
+			<label>在</label>
+			<label class="theme-color">{{lastModifyTime}}</label>
+			<label>进行最后修改。</label>
+		</div>
+	</div>
+	<div class="pull-right clearfix">
+		<div class="search-form">
+			<input type="text" name="keyword" class="search-box" placeholder="输入关键字" />
+			<i class="fa fa-search"></i>
+		</div>
+		<button class="btn btn-primary btn-sm">导出名单</button>
+	</div>
+</header>
+<div class="content-body">
+	<div class="xx-orgs">
+		<section class="xx-list-content">
+			{{#if organizations.length}}
+			<span>暂无下级组织申请加入！</span>
+			{{/if}}
+			<div class="row no-margin">
+				{{#each organizations}}
+				<div class="col-xs-6 no-padding">
+					<div class="xx-list-option org-option clearfix">
+						<div class="pull-left focus xx-logo" style="background-image:url(''),url(images/default/2.png);">
+							<div class="org-type-icon-wrapper right-bottom width30">
+								<div class="org-type-icon academic"></div>
+							</div>
+						</div>
+						<div class="info">
+							<p class="name">
+								<a href="#organization/{{org.id}}">
+									<span class="theme-color xx-org">{{org.name}}</span>
+								</a>
+							</p>
+							<p class="type">
+								<span class="">{{org.type}}</span>
+							</p>
+							<p class="">
+								<button class="btn btn-success btn-xs" data-xx-action="acceptApply" data-value="{{org.id}}">接受</button>
+								<button class="btn btn-xs btn-danger" data-xx-action="rejectApply" data-value="{{org.id}}">拒绝</button>
+							</p>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			<div class="row pageination-wrapper">
+				<ul class="pagination">
+					{{#each navs}}
+					 	{{nav}}
+					{{/each}}
+				</ul>
+			</div>
+		</section>
+	</div>
+</div>

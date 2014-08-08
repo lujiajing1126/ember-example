@@ -6,34 +6,29 @@
     }, function() {
       this.resource('logout');
       this.resource('home');
-      this.resource('ent', function() {
-        return this.route('edit');
+      this.resource('setting', function() {
+        this.resource('profile');
+        return this.resource('password');
       });
       this.resource('org', function() {
         this.route('list');
         return this.route('show', {
-          path: '/org/:orgId'
+          path: '/org/:org_id'
         });
       });
       this.resource('act', function() {
         this.route('list');
         return this.route('show', {
-          path: '/act/:actId'
+          path: '/:act_id'
         });
       });
       this.resource('sponsor', function() {
         this.route('list');
         return this.route('show', {
-          path: '/sponsor/:sponsorId'
+          path: '/:sponsor_id'
         });
       });
-      this.resource('history');
-      return this.resource('users', function() {
-        this.route('new');
-        return this.resource('user', {
-          path: '/:user_id'
-        });
-      });
+      return this.resource('history');
     });
   });
 

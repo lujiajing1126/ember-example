@@ -1,0 +1,275 @@
+<header class="content-header clearfix">
+	<div class="content-title pull-left clearfix">
+		<div class="helper-font-24 theme-color"> <i class="fa fa-pencil"></i>
+			<span>活动策划</span>
+			<label>本项目由</label>
+			<label class="theme-color"></label>
+			<label>在</label>
+			<label class="theme-color"></label>
+			<label>进行最后修改。</label>
+		</div>
+	</div>
+	<div class="pull-right clearfix">
+		<button class="btn btn-xx-theme btn-sm">查看赞助状况</button>
+	</div>
+</header>
+<div class="content-body">
+	<form class="">
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动名称</span>
+			<input type="text" class="form-control" name="name" id="A_NAME" data-validate-type="out" data-validate-rule="require|notNum" placeholder="请填写活动名称（必填项）" value="{{name}}" />
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动地点</span>
+
+			<input type="text" class="form-control" name="location->
+			String" id="A_ADDRESS" data-type="string" data-validate-rule="require" data-validate-type="out" placeholder="请填写活动地点（必填项）" value="{{location}}" />
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动时间</span>
+			<div class="form-control">
+				<div class="form-inline">
+					<div class="form-group" >
+						<div class="input-group width-140" >
+							<span class="input-group-addon theme-color">从</span>
+							<input type="text" class="form-control datetimepicker" data-validate-rule="require" data-validate-type="out" data-validate-tips="时间格式不正确" placeholder="活动开始时间" style="width:150px;" name="begin" value="{{begin}}" /></div>
+					</div>
+					<div class="form-group" >
+						<div class="input-group width-140" >
+							<span class="input-group-addon theme-color">至</span>
+							<input type="text" class="form-control datetimepicker" style="width:150px;" data-validate-rule="require" data-validate-type="out" placeholder="活动结束时间" data-validate-tips="时间格式不正确" name="end" value="{{end}}"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">预期人数</span>
+			<input type="text" class="form-control" id="A_NUM" name="numberOfPeople" placeholder="预期人数不填为无穷大" data-tips="格式必须为数字" value="{{numberOfPeople}}" />
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">校校专座</span>
+			<input type="text" class="form-control" id="A_SEAT" name="numberOfPreservedSeats" placeholder="校校专座不填为零" data-tips="格式必须为数字" value="{{numberOfPreservedSeats}}" />
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动类型</span>
+			<div class="form-control">
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="category" value="讲座" checked />
+					<span>讲座</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="category" value="聚会" />
+					<span>聚会</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="category" value="演出" />
+					<span>演出</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="category" value="赛事" />
+					<span>赛事</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="category" value="公益" />
+					<span>公益</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="category" value="招新" />
+					<span>招新</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input" name="category" value="其他" />
+					<span>其他</span>
+				</label>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">允许App报名</span>
+			<div class="form-control">
+				<div>
+					<label class="prompt">选择否或者报名所需资料未勾选则个人用户不能在App端报名此活动。</label>
+				</div>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input appJoin" name="*appJoin" value="1" checked />
+					<span>是</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="radio" class="xx-input appJoin" name="*appJoin" value="0" checked />
+					<span>否</span>
+				</label>
+			</div>
+		</div>
+		<div class="input-group" id="thingsneeded">
+			<span class="input-group-addon theme-color">报名所需资料</span>
+			<div class="form-control">
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="name" checked />
+					<span>姓名</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="nickname" checked />
+					<span>昵称</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="studentId" checked />
+					<span>学号</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="phone-number" checked />
+					<span>手机</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="email" checked />
+					<span>邮箱</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="school" checked />
+					<span>学校</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="department" checked />
+					<span>学院</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="grade" checked />
+					<span>年级</span>
+				</label>
+				<label class="xx-input-label">
+					<input type="checkbox" class="xx-input" name="signUpFields[]" value="major" checked />
+					<span>专业</span>
+				</label>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动预算</span>
+			<div class="form-control" id="budgetContent">
+				<div class="form-inline">
+					<div class="form-group" >
+						<div class="input-group">
+							<span class="input-group-addon theme-color">总计&yen;</span>
+							<span class="form-control" id="Total_Budget_Money">0</span>
+							<span class="input-group-addon btn btn-info btn-sm" title="添加预算条目" id="Add_budget">+添加预算</span>
+						</div>
+					</div>
+					<label class="prompt">预算单价、数量、用途必填，否则不计入系统。</label>
+				</div>
+				{{#each budgets}}
+				<div class="form-inline budget-box">
+					<div class="form-group" >
+						<div class="input-group width-140">
+							<div class="input-group-addon theme-color">单价&yen;</div>
+							<input type="text" class="form-control budget-money" placeholder="预算金额" data-tips="预算金额必须为数字" value="{{budget.amount}}" style="width:100px;" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group width-140">
+							<div class="input-group-addon theme-color">数量</div>
+							<input type="text" class="form-control budget-number"  placeholder="如：场地布置" data-tips="预算用途不能为空" value="{{budget.number}}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon theme-color">用途</div>
+							<input type="text" class="form-control budget-use" data-validate-type="out" data-validate-rule="require" placeholder="如：基础资金" data-tips="预算类型不能为空" value="{{budget.usage}}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+							<div class="btn btn-danger btn-sm budget-close">—</div>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动海报</span>
+			<div class="form-control">
+				<div class="upload-file-box activity-bg">
+					<div class="pull-left upload-file-wrapper">
+						<div class="activity-img drag-to-upload img">
+							{{#if poster}}
+							<img src="/api/event/{{id}}/poster/load" />
+							{{/if}}
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<label class="btn btn-sm btn-xx-theme" for="uploadPoster"> <i class="fa fa-plus"></i>
+							</label>
+							<input type="file" multiple="false" accept="image/*" class="hide" id="uploadPoster" name="uploadPoster" autocomplete="off" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动简介</span>
+			<textarea class="form-control" name="description" id="Introduction" rows="6" data-validate-rule="require" data-validate-type="out" placeholder="快来介绍一下你要发布的活动吧。">{{description}}</textarea>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">活动策划案</span>
+			<div class="form-control">
+				<div class="upload-file-box">
+					<div class="pull-left upload-file-wrapper">
+						<div class="xx-panel-container" id="attachmentsContainer">
+							{{#if attachments}}
+								{{#each attachments}}
+							<div class="xx-panel-wrapper">
+								<div class="xx-panel-content">
+									<header class="xx-panel-header clearfix">
+										<div class="xx-panel-title">{{value.filename}}</div>
+										<div class="xx-panel-operator">
+											<span class="xx-panel-btn-close" title="删除">X</span>
+										</div>
+									</header>
+								</div>
+							</div>
+							{{/each}}
+							{{/if}}
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<label class="btn btn-sm btn-xx-theme" for="btnAttachmentUpload">
+								<i class="fa fa-plus"></i>
+							</label>
+							<input type="file" multiple="true" accept="*/*" class="hide" id="btnAttachmentUpload" name="btnAttachmentUpload" autocomplete="off" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">发布版块</span>
+			<div class="form-control">
+				<div class="upload-file-box">
+					<div class="pull-left upload-file-wrapper" >
+						<div class="xx-panel-container" id="targetBoards">
+							{{#each targets}}
+							<div class="xx-panel-wrapper">
+								<div class="xx-panel-content">
+									<header class="xx-panel-header clearfix">
+										<div class="xx-panel-title">{{target.name}}</div>
+										<div class="xx-panel-operator">
+											<span class="xx-panel-btn-close delTargetModule" title="删除本模块">X</span>
+										</div>
+									</header>
+								</div>
+							</div>
+							{{/each}}
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<span class="btn btn-xx-theme btn-sm" title="" data-xx-action="queryBoard" data-toggle="tooltip" data-placement="top" data-original-title="添加发布版块">
+								<i class="fa fa-plus"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -23,6 +23,8 @@
 
   })(Ember.Auth);
 
+  Enterprise.ApplicationSerializer = DS.ActiveModelSerializer.extend();
+
   require('scripts/controllers/*');
 
   require('scripts/store');
@@ -30,6 +32,8 @@
   require('scripts/models/*');
 
   require('scripts/routes/*');
+
+  require('scripts/helpers/*');
 
   require('scripts/components/*');
 

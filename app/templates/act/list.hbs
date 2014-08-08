@@ -1,0 +1,44 @@
+<!--活动列表页面模板-->
+<!--header start-->
+<header class="content-header clearfix">
+	<div class="content-title pull-left">
+		<div class="helper-font-24 theme-color">
+			<i class="fa fa-pencil"></i>
+			<span>活动列表({{actList.length}})</span>
+		</div>
+	</div>
+</header>
+<!--header end-->
+<!--body start-->
+<div class="content-body">
+	<div class="activity-list-wrapper">
+		{{#if model.length}}
+		{{#each}}
+			<div class="activity-wrapper">
+				<header class="activity-header">
+					<span>{{moment begin}}</span>
+				</header>
+				<section class="actvity-body">
+					<div class="activity-logo pull-left clearfix">
+						<img {{bind-attr src=posterSrc}} alt="logo">
+					</div>
+					<div class="activity-content">
+						<header class="activity-title">
+							<h2>{{#link-to 'act.show' id}}{{name}}{{/link-to}}</h2>
+						</header>
+						<section class="activity-intro">
+							<p>{{description}}</p>
+						</section>
+						<footer class="activity-address">
+							<span>地点：{{location}}</span>
+						</footer>
+					</div>
+				</section>
+			</div>
+		{{/each}}
+		{{else}}
+			现在还没有发布的活动
+		{{/if}}
+	</div>
+</div>
+<!--body end-->

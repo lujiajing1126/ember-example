@@ -20,6 +20,7 @@
     "grunt-contrib-watch": "~0.5.2",
     "grunt-ember-script": "0.0.3",
     "grunt-ember-templates": "0.4.14",
+    "grunt-emblem": "^0.1.0",
     "grunt-mocha": "~0.4.1",
     "grunt-neuter": "~0.6.0",
     "grunt-open": "~0.2.0",
