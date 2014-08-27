@@ -3,6 +3,7 @@ var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'LogoutRoute', Ember.Route.extend({
   setupController: function () {
+    this.controllerFor('application').logout();
     return this.transitionTo('login');
   }
 }));

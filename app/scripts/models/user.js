@@ -2,8 +2,7 @@
 var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'User', get$(DS, 'Model').extend({
-  email: DS.attr('string'),
+  username: DS.attr('string'),
   session: DS.attr('string'),
-  name: DS.attr('string'),
-  userId: DS.attr('number')
+  orgs: DS.hasMany('org')
 }));

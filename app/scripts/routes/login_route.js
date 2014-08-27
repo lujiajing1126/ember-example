@@ -4,18 +4,49 @@ var get$ = Ember.get;
 set$(Enterprise, 'LoginRoute', Ember.Route.extend({
   actions: {
     login: function () {
-      var email, loginController, password;
+      var columnName, formData, loginController, password, username;
+      console.log('login actions');
+      formData = {};
       loginController = this.controllerFor('login');
-      email = loginController.get('email');
+      username = loginController.get('email');
       password = loginController.get('password');
+      columnName = username.indexOf('@') !== -1 ? 'email' : 'phone_number';
+      formData[columnName] = username;
+      set$(formData, 'password', password);
       return Ember.$.ajax({
-        url: '/testapi/login.json',
+        url: '/api/session/create',
         dataType: 'json',
-        type: 'get'
+        type: 'post'
       }).then(function (this$) {
         return function (data) {
-          if (get$(data, 'email') === email && get$(data, 'password') === password)
-            return this$.transitionTo('home');
+          if (get$(data, 'status') === 'OK') {
+            set$(formData, 'session', get$(data, 'session'));
+            return Ember.$.ajax({
+              url: '/api/account/login',
+              dataType: 'json',
+              type: 'post',
+              data: formData
+            }).then(function (this$1) {
+              return function (data) {
+                var applicationController, transition;
+                if (get$(data, 'status') === 'OK') {
+                  localStorage.setItem('xiaoxiao:currentUserID', get$(data, 'userId'));
+                  localStorage.setItem('xiaoxiao:session', formData.session);
+                  applicationController = this$1.controllerFor('application');
+                  transition = applicationController.get('savedTransition');
+                  applicationController.login();
+                  transition = applicationController.get('savedTransition');
+                  if (transition && get$(transition, 'targetName') !== 'authenticated.index') {
+                    return transition.retry();
+                  } else {
+                    return this$1.transitionTo('home');
+                  }
+                } else {
+                  return Notifier.error('\u60A8\u8F93\u5165\u7684\u7528\u6237\u540D\u6216\u5BC6\u7801\u4E0D\u6B63\u786E');
+                }
+              };
+            }(this$));
+          }
         };
       }(this));
     }

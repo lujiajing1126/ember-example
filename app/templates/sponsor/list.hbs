@@ -1,0 +1,74 @@
+<!-- 赞助申请 已 保存表列模板-->
+<!--nav start-->
+<nav class="content-nav">
+	<div class="activity-status active">
+		<i class="fa fa-save"></i>
+		<span>保存未申请赞助</span>
+	</div>
+	<div class="activity-status ">
+		<i class="fa fa-save"></i>
+		<a href="#sponsor/applies?type=savedapply">
+			<span>已申请赞助</span>
+		</a>
+	</div>
+</nav>
+<!--nav end-->
+<header class="content-header clearfix">
+	<div class="content-title pull-left clearfix">
+		<div class="helper-font-16 theme-color">
+			<i class="fa fa-save"></i>
+			<span>已申请赞助（{{model.length}}）</span>
+		</div>
+	</div>
+	<div class="pull-right clearfix">
+		<div class="search-form">
+			<input type="text" name="keyword" class="search-box" placeholder="输入关键字" />
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="javascript:void(0);">
+			<button class="btn btn-xx-theme btn-xs" data-xx-action="createNewApply">新建申请</button>
+		</a>
+	</div>
+</header>
+<div class="content-body">
+	<div class="xx-apply">
+		<section class="xx-list-content">
+			{{#unless model.length}}
+			<div>暂无赞助申请</div>
+			{{/unless}}
+			{{#if model.length}}
+			<div class="row no-margin">
+				{{#each model}}
+				<div class="col-xs-6">
+					<div class="xx-list-option notice-option clearfix">
+						<div class="pull-left focus xx-logo xx-logo-60" style="background-image:url(images/default/30.jpg);">
+							<!--公告发布者的头像-->
+							<!-- <img src="{{option.creatorLogo}}" />
+							-->
+						</div>
+						<div class="info">
+							<p class="name">
+								<span class="theme-color">
+									<a class="xx-apply" href="#sponsor/apply/{{id}}">{{title}}</a>
+								</span>
+							</p>
+							<p class="">
+								<!--what's we need-->
+								<span class="">需求: {{demanding}}</span>
+							</p>
+							<p class="date">
+								<span>发布时间: {{moment timeOfRequest}}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+			<div class="row pageination-wrapper">
+				<ul class="pagination">
+				</ul>
+			</div>
+			{{/if}}
+		</section>
+	</div>
+</div>

@@ -3,13 +3,14 @@ var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'AuthenticatedRoute', Ember.Route.extend({
   beforeModel: function (transition) {
-    var applicationController, userHash;
+    var applicationController, userSession;
     applicationController = this.controllerFor('application');
-    userHash = localStorage.getItem('xxoa:currentUser');
-    if (userHash && userHash !== null) {
+    userSession = localStorage.getItem('xiaoxiao:session');
+    if (userSession && userSession !== 'null') {
       return this.controllerFor('application').login();
     } else {
-      return applicationController.set('savedTransition', transition);
+      applicationController.set('savedTransition', transition);
+      return this.transitionTo('login');
     }
   }
 }));

@@ -1,4 +1,4 @@
 class Enterprise.LogoutRoute extends Ember.Route
 	setupController: ->
-		# @controllerFor('application').logout()
+		@controllerFor('application').logout()
 		@transitionTo('login')

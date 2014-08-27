@@ -2,25 +2,8 @@
 var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'Org', get$(DS, 'Model').extend({
-  parent: DS.attr('number'),
   contact: DS.attr('number'),
   name: DS.attr('string'),
-  description: DS.attr('string'),
-  email: DS.attr('string'),
-  numberOfFollowers: DS.attr('number'),
-  numberOfExecutingEvents: DS.attr('number'),
-  numberOfMembers: DS.attr('number'),
-  roleType: DS.attr('string')
+  roleType: DS.attr('string'),
+  user: DS.belongsTo('user')
 }));
-set$(get$(Enterprise, 'Org'), 'FIXTURES', [{
-    parent: null,
-    contact: 351,
-    name: '\u963F\u5BBE\u5FEB\u8FDB\u6765',
-    description: '\u5148\u5E1D\u521B\u4E1A\u672A\u534A\u800C\u4E2D\u9053\u5D29\u963B\u5148\u5E1D\u521B\u4E1A\u672A\u534A\u800C\u4E2D\u9053\u5D29\u963B\u5148\u5E1D\u521B\u4E1A\u672A\u534A\u800C\u4E2D\u9053\u5D29\u963B',
-    id: 352,
-    email: '450994392@qq.com',
-    numberOfFollowers: 0,
-    numberOfExecutingEvents: 1,
-    numberOfMembers: 4,
-    roleType: 'none'
-  }]);

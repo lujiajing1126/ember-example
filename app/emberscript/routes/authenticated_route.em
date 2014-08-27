@@ -1,9 +1,9 @@
 class Enterprise.AuthenticatedRoute extends Ember.Route
 	beforeModel: (transition) ->
 		applicationController = @controllerFor 'application'
-		userHash = localStorage.getItem 'xxoa:currentUser'
-		if userHash and userHash isnt null
+		userSession = localStorage.getItem 'xiaoxiao:session'
+		if userSession and userSession isnt 'null'
 			@controllerFor('application').login()
 		else
 			applicationController.set 'savedTransition', transition
-			# @transitionTo 'login'
+			@transitionTo 'login'
