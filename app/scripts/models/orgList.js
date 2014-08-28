@@ -5,30 +5,3 @@ set$(Enterprise, 'OrgList', get$(DS, 'Model').extend({
   name: DS.attr('string'),
   roleType: DS.attr('string')
 }));
-set$(get$(Enterprise, 'OrgList'), 'FIXTURES', [
-  {
-    name: '\u963F\u5BBE\u5FEB\u8FDB\u6765',
-    id: 352,
-    roleType: 'none'
-  },
-  {
-    name: '\u6D4B\u8BD5\u7EC4\u7EC7\u4E00',
-    id: 53,
-    roleType: 'none'
-  },
-  {
-    name: '\u963F\u5BBE\u5FEB\u8FDB\u67651',
-    id: 1,
-    roleType: 'none'
-  },
-  {
-    name: '\u963F\u5BBE\u5FEB\u8FDB\u67653',
-    id: 2,
-    roleType: 'none'
-  },
-  {
-    name: '\u963F\u5BBE\u5FEB\u8FDB\u67654',
-    id: 3,
-    roleType: 'none'
-  }
-]);

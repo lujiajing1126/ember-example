@@ -16,4 +16,3 @@ Enterprise.Router.map ->
 		@resource 'sponsor',->
 			@route 'list'
 			@route 'show', path:'/:sponsor_id'
-		@resource 'history'

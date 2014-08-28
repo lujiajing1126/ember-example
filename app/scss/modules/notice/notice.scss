@@ -1,92 +1,91 @@
-
 .notice-content {
 	width: 400px;
 	header {
 		h1 {
-			font-size: 22px;
+			font-size: 16px;
 		}
 		p.date {
-			font-size: 18px;
+			font-size: 14px;
 			color: #666;
 		}
 	}
 	.notice-context {
-		p{text-indent: 1em;
-			font-size: 16px;
+		p{
+			text-indent: 2em;
+			font-size: 14px;
 			color: #888;
-			line-height: 25px;
+			line-height: 20px;
 		}
 	}
 	.notice-creator {
 		margin-top: 20px;
 		span {
-			font-size: 16px;
+			font-size: 14px;
 		}
 	}
 }
 .notice-reply {
 	width: auto;
 	margin-left: 500px;
-	.notice-reply-box{
+	.notice-reply-box {
 		padding: 10px;
-		header{
-			padding:5px 0;
+		header {
+			padding: 3px 0;
 			border-bottom: 1px solid $theme-color;
-			span{
-				font-size: 18px;
+			span {
+				font-size: 14px;
 			}
 		}
-		section{
-			padding:10px 0;
+		section {
+			padding: 10px 0;
 			height: 150px;
 			overflow: hidden;
 			overflow-y: auto;
-			a{
+			a {
 				cursor: pointer;
 				color: #fff;
-				padding:3px 5px;
-				border-radius:16px;
+				padding: 3px 5px;
+				border-radius: 16px;
 				margin: 5px;
 			}
 		}
-		&.success{
-			header{
-				span{
+		&.success {
+			header {
+				span {
 					color: $theme-color;
-
 				}
 			}
-			section{
-				a{
-					background-color: $theme-color;
+			section {
+				a{background-color: $theme-color;
 				}
-				a:hover{
+				a:hover {
 					background-color: $theme-deep-color;
 				}
 			}
 		}
-		&.error{
-			header{
-				span{
+		&.error {
+			header {
+				span {
 					color: $danger-color;
 				}
 			}
-			section{
-				a{
-					background-color:$danger-color;
+			section {
+				a{background-color: $danger-color;
 				}
-				a:hover{
-					background-color:$danger-deep-color;
+				a:hover {
+					background-color: $danger-deep-color;
 				}
 			}
 		}
 	}
 }
-
 //公告回复列表
-ul.notice-reply-list{
-	li{
-		padding:5px 0;
+ul.notice-reply-list {
+	li {
+		padding: 5px 0;
 		border-bottom: 1px solid $theme-color;
+		p{
+			line-height: 20px;
+		}
 	}
 }

@@ -10,6 +10,10 @@
 
   Enterprise.ApplicationSerializer = DS.ActiveModelSerializer.extend();
 
+  Em.RSVP.configure('onerror', function(error) {
+    return Em.Logger.assert(false, error);
+  });
+
   require('scripts/controllers/*');
 
   require('scripts/store');

@@ -2,24 +2,26 @@ body {
 	background-color: #f5f9fa;
 	padding-top: 70px;
 	overflow-x: hidden;
+	font-size: 12px;
+	scroll: auto;
 }
-.input-group-addon{
-	background-color:#fcffff;
-	border-color:#7fe5ff;
+html,body {
+	// 黑体的标准写法
+	font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
 }
-.form-control{
-	border-color:#7fe5ff;
+.input-group-addon {
+	background-color: #fcffff;
+	border-color: #7fe5ff;
+}
+.form-control {
+	border-color: #7fe5ff;
 }
 section.section {
 	padding-left: 100px;
 }
-
-/**
- * 全局Z-INDEX说明：
- * modal-bg：1030
- * modal：1040
- * alert-msg：1050
- */
+span {
+	cursor: default;
+}
 .modal {
 	z-index: 1040;
 }
@@ -54,39 +56,47 @@ $bg-color: #EEEEEE;
 $danger-color: #ff5454;
 $danger-deep-color: #ce0404;
 $success-color: #75db59;
-$no-operator:#aaaaaa;
-.xx-theme-color{
-	color:$theme-color;
+$no-operator: #aaaaaa;
+.xx-theme-color {
+	color: $theme-color;
 }
-.xx-danger-bg{
-	background-color:$danger-color;
-	color:#fff;
+.xx-danger-bg {
+	background-color: $danger-color;
+	color: #fff;
 }
-.xx-logo{
-	background-repeat:no-repeat;
-	background-position:center;
-	background-size:cover;
-	&.xx-logo-80{
+.xx-logo {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	margin:0 auto;
+	&.xx-logo-60 {
+		width: 60px;
+		height: 60px;
+	}
+	&.xx-logo-80 {
 		width: 80px;
 		height: 80px;
 	}
-	&.xx-logo-100{
+	&.xx-logo-100 {
 		width: 100px;
 		height: 100px;
 	}
-	&.xx-logo-120{
+	&.xx-logo-120 {
 		width: 120px;
 		height: 120px;
 	}
 }
 //标签(目标审核状态之类的)
 .xx-label {
-	font-size: 14px;
+	font-size: 10px;
 	background-color: #d1d1d1;
 	color: #fff;
-	padding: 3px 5px;
-	border-radius: 5px;
-	background-color:$no-operator;
+	padding: 0px 5px;
+	border-radius: 8px;
+	display: inline-block;
+	background-color: $no-operator;
 	&.active {
 		background-color: $theme-color;
 	}
@@ -96,13 +106,11 @@ $no-operator:#aaaaaa;
 	&.xx-label-error {
 		background-color: $danger-color;
 	}
-	&.xx-label-danger-color{
-		background-color:#fff;
+	&.xx-label-danger-color {
+		background-color: #fff;
 		color: $danger-color;
 	}
 }
-
-
 //自定义搜索框
 .panel-search-wrapper {
 	position: relative;
@@ -152,7 +160,6 @@ $no-operator:#aaaaaa;
 		z-index: 102;
 		width: 300px;
 		padding-left: 20px;
-
 		ul, li {
 			text-decoration: none;
 			list-style: none;
@@ -160,7 +167,7 @@ $no-operator:#aaaaaa;
 		.panel-search-list {
 			padding: 0;
 			border-top: 1px solid #f2f2f2;
-			box-shadow:1px 1px 3px #555;
+			box-shadow: 1px 1px 3px #555;
 			li {
 				padding: 5px 10px;
 				line-height: 25px;
@@ -203,8 +210,8 @@ $no-operator:#aaaaaa;
 					width: 150px;
 					text-align: center;
 					color: #fff;
-					padding:0 5px;
-					overflow:hidden;
+					padding: 0 5px;
+					overflow: hidden;
 					cursor: pointer;
 					white-space: nowrap;
 					text-overflow: ellipsis;
@@ -249,10 +256,10 @@ $no-operator:#aaaaaa;
 					color: #fff;
 					padding: 0 10px;
 					&.success {
-						background-color: #02e511;
+						background-color: #20A929;
 					}
 					&.error {
-						background-color: #cc0000;
+						background-color: #ee4d4d;
 					}
 					&.ignore {
 						background-color: #aaa;
@@ -286,6 +293,37 @@ $no-operator:#aaaaaa;
 			&.flag {
 				display: none;
 			}
+		}
+	}
+}
+nav.content-nav {
+	position: relative;
+	div.active {
+		span {
+			a{color: #fff;
+				text-decoration: none;
+				&:hover {
+					color: #fff;
+					text-decoration: none;
+					font-style: normal;
+				}
+			}
+		}
+	}
+	div > span > a:hover {
+		text-decoration: none;
+	}
+	.xx-inner-select-menu {
+		position: absolute;
+		left: 0;
+		&.account-switcher {
+			&.open{
+				.dropdown-menu {
+				left: 0;
+				top: 80%;
+			}
+			}
+			
 		}
 	}
 }

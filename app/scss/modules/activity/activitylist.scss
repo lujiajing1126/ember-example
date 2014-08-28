@@ -1,83 +1,81 @@
-.activity-list-wrapper{
-	width:100%;
-	min-height:500px;
-	overflow:hidden;
-	overflow-y:auto;
-	.activity-wrapper{
+.activity-list-wrapper {
+	width: 100%;
+	min-height: 500px;
+	overflow: hidden;
+	overflow-y: auto;
+	.activity-wrapper {
 		width: 100%;
-		padding: 20px 0;
+		padding: 0 0 10px;
 		border-bottom: 1px solid $theme-color;
-		div{
-			overflow:hidden;
+		div {
+			overflow: hidden;
 		}
-		.activity-header{
-			height: 30px;
-			line-height: 30px;
-			span{
-				font-size: 20px;
+		.activity-header {
+			// height: 20px;
+			line-height: 25px;
+			span {
+				font-size: 16px;
 				color: #888;
 			}
 		}
-		.actvity-body{
-			height: 180px;
-			overflow:hidden;
-
-			.activity-logo{
-				width: 250px;
-				overflow:hidden;
-				img{
+		.actvity-body {
+			height: 150px;
+			overflow: hidden;
+			.activity-logo {
+				width: 200px;
+				overflow: hidden;
+				img {
 					width: 100%;
 					max-height: 100%;
 				}
 			}
-			.activity-content{
+			.activity-content {
 				width: auto;
-				margin-left: 270px;
-   				height: 100%;
-   				.activity-title{
-   					height: 40px;
-   					line-height: 40px;
-   					h2{
-   						margin: 0;
-   						color: #444;
-   						font-size: 26px;
-   					}
-   				}
-   				.activity-intro{
-   					height: 100px;
-   					line-height: 20px;
-   					overflow:hidden;
-   					p{
-   						font-size: 16px;
-   						color: #777;
-   					}
-   				}
-   				.activity-address{
-   					height: 40px;
-   					line-height: 40px;
-   					span{
-   						font-size: 16px;
-   						color: #333;
-   					}
-   				}
+				margin-left: 220px;
+				height: 100%;
+				.activity-title {
+					height: 30px;
+					h2 {
+						margin: 0;
+						color: #444;
+						font-size: 16px;
+						line-height: 30px;
+					}
+				}
+				.activity-intro {
+					height: 80px;
+					line-height: 20px;
+					overflow: hidden;
+					p {
+						font-size: 13px;
+						color: #777;
+					}
+				}
+				.activity-address {
+					span {
+						line-height: 40px;
+						font-size: 14px;
+						color: #666;
+					}
+				}
 			}
 		}
-		.activity-progress{
+		.activity-progress {
 			width: 100%;
 			margin-top: 10px;
-			.activity-review-status{
-				height: 15px;
+			.activity-review-status {
+				height: 10px;
 				float: left;
-				border-right:1px solid #fff;
+				border-right: 1px solid #fff;
 				margin: 0;
 				word-spacing: -1.5em;
-				&.success{
+				&.success {
 					background-color: green;
 				}
-				&.error{
+				&.error {
 					background-color: red;
 				}
-				&.ignore{
+				&.ignore {
 					background-color: gray;
 				}
 			}

@@ -12,6 +12,9 @@ $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 @import "../scss/modules/partial/modal";
 // buttons
 @import "../scss/globals/buttons";
+@import "../scss/globals/mixins";
+@import "../scss/globals/icons";
+@import "../scss/globals/modal";
 // mailbox
 @import "../scss/modules/mailbox";
 // header

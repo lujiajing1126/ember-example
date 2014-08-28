@@ -39,7 +39,6 @@ div.mailbox {
 					div {
 						a{
 							display: inline-block;
-							cursor: pointer;
 							font-size: 14px;
 							line-height: 20px;
 							padding-bottom: 15px;
@@ -47,10 +46,17 @@ div.mailbox {
 							padding-right: 0px;
 							padding-top: 15px;
 							text-decoration: none;
+							span {
+								cursor: pointer;
+							}
+							&.read-all-handler {
+								cursor: pointer;
+							}
 						}
-						> span {
+						.divider-vertical {
 							margin-left: 9px;
 							margin-right: 5px;
+							cursor: normal;
 						}
 					}
 				}
@@ -69,11 +75,16 @@ div.mailbox {
 		}
 	}
 	> div.container.inbox-content{
-		div.messages-wrapper{
+		div.messages-content-wrapper{
 			position: relative;
 			width: 40%;
 			height: 100%;
 			float: left;
+			overflow: auto;
+			/* IE9 , IE10 ,IE11 rule sets go here */
+			@media screen and (min-width:0\0) {
+				left: -40%;
+			} 
 			ul.messages {
 				padding: 20px;
 				overflow-y: auto;
@@ -101,8 +112,11 @@ div.mailbox {
 					border-radius: 2px;
 					-webkit-box-shadow: rgba(0,0,0,0.0470588) 0 2px 3px 0;
 					box-shadow: rgba(0,0,0,0.0470588) 0 2px 3px 0;
-					&.read{
+					&.read {
 						background-color:rgba(255,255,255,0.5);
+					}
+					&:hover {
+						background-color: #fff;
 					}
 				}
 			}
@@ -120,6 +134,133 @@ div.mailbox {
 				width: 100%;
 				height: auto;
 				margin: 20px 20px 0;
+				.task-detail {
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					width: auto;
+					height: auto;
+					overflow-x: hidden;
+					overflow-y: auto;
+					-webkit-overflow-scrolling: touch;
+					background-color: #fff;
+					-webkit-border-radius: 2px;
+					-moz-border-radius: 2px;
+					border-radius: 2px;
+					-webkit-transition: bottom 218ms ease;
+					transition: bottom 218ms ease;
+					header.task-detail-header {
+						position: relative;
+						background-color: #fafafa;
+						border-bottom: 1px solid rgba(0,0,0,0.07);
+						.task-detail-handler-cell.big-cell {
+							position: absolute;
+							width: 100%;
+							padding: 0 155px 0 20px;
+							.task-detail-handler {
+								width: 33%;
+								max-width: 180px;
+								padding-right: 15px;
+								position: relative;
+								float: left;
+								> a {
+									display: block;
+									height: 49px;
+									padding: 15px 0 14px;
+									vertical-align: middle;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									white-space: nowrap;
+									color: rgb(128, 128, 128);
+									text-decoration: none;
+									cursor: pointer;
+									&:hover {
+										color: #08c;
+										text-decoration: none;
+									}
+								} 
+								.dropdown-menu {
+									li {
+										cursor: pointer;
+										a {
+											cursor: pointer;
+										}
+									}
+								}
+							}
+						}
+						.task-detail-handler-cell.small-cell {
+							float: right;
+							text-align: center;
+							padding-right: 20px;
+						}
+					}
+					.task-detail-content {
+						.task-wrapper {
+							margin: 0 20px;
+							padding: 15px 0;
+							border-bottom: 1px solid rgba(0,0,0,0.12);
+							.task {
+								overflow: visible;
+								position: relative;
+								white-space: normal;
+								.check-box {
+									margin: 5px 10px 5px 0;
+									float: left;
+									width: 20px;
+									height: 20px;
+									border-style: solid;
+									border-width: 1px;
+									border-color: #b3b3b3;
+									cursor: pointer;
+									-webkit-border-radius: 3px;
+									-moz-border-radius: 3px;
+									border-radius: 3px;
+								}
+								.non-checkable {
+									border: 1px solid #d9d9d9;
+									background-color: #eee;
+									cursor: default;
+								}
+							}
+							.task-content-wrapper {
+								margin-left: 30px;
+								padding: 5px;
+								-webkit-border-radius: 2px;
+								-moz-border-radius: 2px;
+								border-radius: 2px;
+								position: relative;
+								margin-left: 34px;
+								.flex-text-wrap {
+									font-size: 16px;
+									font-weight: bold;
+									background-color: transparent;
+									outline: 0 none;
+									color: #383838;
+									word-wrap: break-word;
+									margin: 0;
+									border: none;
+									padding: 0;
+									position: relative;
+									min-height: 20px;
+									.flex-content-input {
+										font-size: 16px;
+										font-weight: bold;
+										background-color: transparent;
+										outline: 0 none;
+										color: #383838;
+										word-wrap: break-word;
+									}
+									p {
+										margin: 0;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -150,34 +291,34 @@ div.mailbox {
 }
  
 .bs-callout {
-margin: 20px 0;
-padding: 20px;
-border-left: 10px solid #eee;
+	margin: 20px 0;
+	padding: 20px;
+	border-left: 10px solid #eee;
 }
  
 .bs-callout-warning {
-background-color: #fcf8f2;
-border-color: #f0ad4e;
-border-radius: 4px;
+	background-color: #fcf8f2;
+	border-color: #f0ad4e;
+	border-radius: 4px;
 }
 .bs-callout-warning h4 {
-color: #f0ad4e;
+	color: #f0ad4e;
 }
  
 .bs-callout-danger {
-background-color: #fdf7f7;
-border-color: #d9534f;
-border-radius: 4px;
+	background-color: #fdf7f7;
+	border-color: #d9534f;
+	border-radius: 4px;
 }
 .bs-callout-danger h4 {
-color: #d9534f;
+	color: #d9534f;
 }
  
 .bs-callout-info {
-background-color:#f5f5ff;
-border-color: #428bca;
-border-radius: 4px;
+	background-color:#f5f5ff;
+	border-color: #428bca;
+	border-radius: 4px;
 }
 .bs-callout-info h4 {
-color: #428bca;
+	color: #428bca;
 }

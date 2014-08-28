@@ -14,27 +14,3 @@ set$(Enterprise, 'ActList', get$(DS, 'Model').extend({
     return '/api/event/' + get$(this, 'id') + '/poster/load';
   }).property('id')
 }));
-set$(get$(Enterprise, 'ActList'), 'FIXTURES', [
-  {
-    stage: 'drafting',
-    name: '\u5475\u5475\u5475\u5475\u5475',
-    location: '\u770B\u56FE\u7247',
-    category: '\u8BB2\u5EA7',
-    description: '\u5566\u5566\u5566\u5566\u5566',
-    begin: '2014-08-01T18:15:00.000Z',
-    end: '2014-08-12T09:55:00.000Z',
-    id: '53dcca0ba80654311c798252',
-    numberOfPraisers: 0
-  },
-  {
-    stage: 'drafting',
-    name: '\u65B0\u7684\u6D3B\u52A8',
-    location: '\u590D\u65E6\u5927\u5B66',
-    category: '\u8BB2\u5EA7',
-    description: '\u5566\u5566\u5566\u5566',
-    begin: '2014-08-07T17:10:00.000Z',
-    end: '2014-08-08T18:15:00.000Z',
-    id: '53e367693866cb817ce7881a',
-    numberOfPraisers: 0
-  }
-]);

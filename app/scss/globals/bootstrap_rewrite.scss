@@ -1,0 +1,17 @@
+//重写bootstrap的样式
+.input-group-addon,.form-control{
+	font-size:12px;
+}
+.modal-header{
+	.row{
+		width: 95%;
+	}
+}
+.modal-body{
+	padding:0;
+	.alert{
+		padding-top:5px;
+		padding-bottom:5px;
+		margin-bottom: 5px;
+	}
+}

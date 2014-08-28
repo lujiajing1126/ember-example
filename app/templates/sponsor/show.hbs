@@ -1,0 +1,130 @@
+<!--申请赞助详情页面模板-->
+<header class="content-header clearfix">
+	<div class="content-title">
+		<div class="helper-font-16 theme-color">
+			<i class="fa fa-pencil"></i>
+			<span>申请赞助</span>
+		</div>
+	</div>
+</header>
+<div class="content-body">
+	<form id="sponsorApplyInfoForm" class="">
+		<div class="input-group">
+			<span class="input-group-addon theme-color">赞助主题</span>
+			<span class="form-control" name="title">{{title}}</span>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">赞助需求</span>
+			<span class="form-control" name="demanding" id="S_Need">{{demanding}}</span>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">赞助金额</span>
+			<div class="form-control">
+				<div class="form-inline">
+					<div class="form-group" >
+						<div class="input-group width" >
+							<span class="input-group-addon theme-color">￥</span>
+							<span class="form-control" id="zanzhu_money" name="money">{{money}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">赞助提供</span>
+			<span class="form-control" name="providing" id="S_Provide">{{providing}}</span>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">申请资料</span>
+			<div class="form-control">
+				<div class="prompt">上传申请资料有助于提高赞助成功率</div>
+				<div class="upload-file-box ">
+					<div class="pull-left upload-file-wrapper">
+						<div class="xx-panel-container" id="attach_wrapper">
+							{{#each requestAttachment}}
+							<div class="xx-panel-wrapper">
+								<div class="xx-panel-content">
+									<header class="xx-panel-header clearfix">
+										<div class="xx-panel-title">
+											{{filename}}
+										</div>
+									</header>
+								</div>
+							</div>
+							{{/each}}
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<label class="btn btn-xx-theme btn-sm" for="uploadAttachment" title="上传申请资料" data-toggle="tooltip" data-placement="top"> <i class="fa fa-plus"></i>
+							</label>
+							<input type="file" class="hide" id="uploadAttachment" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">关联活动</span>
+			<div class="form-control">
+				<div class="prompt">添加你需要申请赞助的相关活动</div>
+				<div class="upload-file-box ">
+					<div class="upload-file-wrapper pull-left ">
+						<div class="xx-panel-container" id="ACTIVITIES">
+							{{#each events}}
+							<div class="xx-panel-wrapper">
+								<div class="xx-panel-content">
+									<header class="xx-panel-header clearfix">
+										<div class="xx-panel-title">
+											{{#link-to 'act.show' id}}{{name}}{{/link-to}}
+										</div>
+									</header>
+								</div>
+							</div>
+							{{/each}}
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<span class="btn btn-xx-theme btn-sm" title="添加关联活动" data-xx-action="linkAct" data-toggle="tooltip" data-placement="top">
+								<i class="fa fa-plus"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">认证信息</span>
+			<div class="form-control">
+				<div class="prompt">向上级组织申请认证有助于寻找赞助</div>
+				<div class="upload-file-box ">
+					<div class="upload-file-wrapper pull-left ">
+						<!--已申请的认证-->
+						<div class="xx-panel-container" id="appliedCertification">
+							{{#each parent}}
+							<div class="xx-panel-wrapper">
+								<div class="xx-panel-content">
+									<header class="xx-panel-header clearfix">
+										<div class="xx-panel-title">{{p}}</div>
+										<div class="xx-panel-operator">
+											<span class="xx-panel-btn-close" title="删除" data-xx-action="delActivity" data-value="{{p}}">X</span>
+										</div>
+									</header>
+								</div>
+							</div>
+							{{/each}}
+						</div>
+					</div>
+					<div class="upload-file-control-wrapper">
+						<div class="control-btn-wrapper">
+							<span class="btn btn-xx-theme btn-sm" title="添加申请认证组织" data-xx-action="certificationModal" data-toggle="tooltip" data-placement="top">
+								<i class="fa fa-plus"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

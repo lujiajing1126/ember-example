@@ -20,19 +20,23 @@
 		}
 	}
 }
-$notice-focus-width:90px;
+$notice-focus-width: 90px;
 $notice-color: #f26d6d;
+$xx-width-80:80px;
+$xx-width-70:70px;
+$xx-width-60:60px;
 .xx-list-content {
-	padding-top: 10px;
-	background-color: #fff;
+	padding-top: 5px;
+	// background-color: #fff;
 	.xx-list-option {
-		margin: 10px  20px 10px 10px;
+		margin: 0  20px 10px 10px;
 		border-bottom: 1px solid #e6e6e6;
 		padding: 5px;
 		overflow: hidden;
-		background-color: #fff;
+		// background-color: #fff;
 		.focus {
 			overflow: hidden;
+			position: relative;
 			img {
 				max-width: 100%;
 				max-height: 100%;
@@ -41,11 +45,16 @@ $notice-color: #f26d6d;
 		.info {
 			width: auto;
 			position: relative;
-			p{
+			color: #888;
+			p {
 				width: 100%;
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
+				margin: 0;
+				&.name{
+					font-size: 14px;
+				}
 			}
 		}
 		//公告表列内部样式
@@ -58,16 +67,14 @@ $notice-color: #f26d6d;
 				margin-left: $notice-focus-width;
 				padding: 10px;
 				>p {
-					height: 25px;
-					line-height: 25px;
-					margin: 0;
-					color: #888;
+					height: 30px;
+					line-height: 30px;
 					&.reply {
 						span {
 							border-radius: 12px;
-							background-color: $notice-color;
-							color: #fff;
-							padding: 3px 6px;
+							//background-color: $notice-color;
+							//color: #fff;
+							//padding: 3px 6px;
 						}
 					}
 				}
@@ -78,8 +85,7 @@ $notice-color: #f26d6d;
 			margin: 1px 0 0 0;
 			.focus {
 				width: $notice-focus-width;
-				height: $notice-focus-width;
-				position: relative;
+				height: $notice-focus-width;	
 			}
 			.info {
 				margin-left: $notice-focus-width;
@@ -87,8 +93,6 @@ $notice-color: #f26d6d;
 				>p {
 					height: 30px;
 					line-height: 30px;
-					margin: 0;
-					color: #888;
 				}
 			}
 		}
@@ -98,7 +102,6 @@ $notice-color: #f26d6d;
 			.focus {
 				width: $notice-focus-width;
 				height: $notice-focus-width;
-				position: relative;
 			}
 			.info {
 				margin-left: $notice-focus-width;
@@ -106,8 +109,6 @@ $notice-color: #f26d6d;
 				>p {
 					height: 30px;
 					line-height: 30px;
-					margin: 0;
-					color: #888;
 				}
 			}
 		}
@@ -116,16 +117,49 @@ $notice-color: #f26d6d;
 			.focus {
 				width: $notice-focus-width;
 				height: $notice-focus-width;
-				position: relative;
 			}
 			.info {
 				margin-left: $notice-focus-width;
 				padding: 0px 10px;
 				>p {
-					height: 30px;
-					line-height: 30px;
-					margin: 0;
-					color: #888;
+					height: 20px;
+					line-height: 20px;
+					margin-top: 3px;
+				}
+			}
+		}
+		//公告表列内部样式
+		&.member {
+			.focus {
+				width: $xx-width-70;
+				height: $xx-width-70;
+			}
+			.info {
+				margin-left: $xx-width-70;
+				padding: 5px 10px;
+				>p {
+					height: 20px;
+					span {
+						line-height: 20px;
+					}
+				}
+			}
+		}
+		&.activity-option{
+			margin: 1px 0 0 0;
+			.focus {
+				width: 120px;
+				height: 100px;
+			}
+			.info {
+				margin-left: 130px;
+				padding: 0px 10px;
+				>p {
+					height: 33px;
+					line-height: 33px;
+					&.name{
+						font-size: 14px;
+					}
 				}
 			}
 		}
@@ -138,12 +172,11 @@ $notice-color: #f26d6d;
 		margin: 0 auto;
 	}
 }
-
-.modal-data{
-	li{
-		padding:5px 0;
-		p{
-			margin:0;
+.modal-data {
+	li {
+		padding: 5px 0;
+		p {
+			margin: 0;
 		}
 	}
 }

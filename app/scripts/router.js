@@ -22,13 +22,12 @@
           path: '/:act_id'
         });
       });
-      this.resource('sponsor', function() {
+      return this.resource('sponsor', function() {
         this.route('list');
         return this.route('show', {
           path: '/:sponsor_id'
         });
       });
-      return this.resource('history');
     });
   });
 
