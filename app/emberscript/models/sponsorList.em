@@ -5,3 +5,5 @@ class Enterprise.SponsorList extends DS.Model
 	publicity: DS.attr("boolean")
 	timeOfRequest: DS.attr("date")
 	title: DS.attr("string")
+	orgLogo: ~>
+		"/api/org/#{@owner}/logo"

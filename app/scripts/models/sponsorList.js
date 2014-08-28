@@ -7,5 +7,8 @@ set$(Enterprise, 'SponsorList', get$(DS, 'Model').extend({
   providing: DS.attr('string'),
   publicity: DS.attr('boolean'),
   timeOfRequest: DS.attr('date'),
-  title: DS.attr('string')
+  title: DS.attr('string'),
+  orgLogo: Ember.computed(function () {
+    return '/api/org/' + get$(this, 'owner') + '/logo';
+  }).property('owner')
 }));

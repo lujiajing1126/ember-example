@@ -5,5 +5,8 @@ set$(Enterprise, 'Org', get$(DS, 'Model').extend({
   contact: DS.attr('number'),
   name: DS.attr('string'),
   roleType: DS.attr('string'),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user'),
+  orgLogo: Ember.computed(function () {
+    return '/api/org/' + get$(this, 'id') + '/logo';
+  }).property('id')
 }));

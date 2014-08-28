@@ -18,5 +18,144 @@ set$(Enterprise, 'Activity', get$(DS, 'Model').extend({
   images: DS.attr(),
   attachments: DS.attr(),
   targets: DS.attr(),
-  budgets: DS.attr()
+  budgets: DS.attr(),
+  hasSigningUpFields: Ember.computed(function () {
+    if (null != get$(this, 'signingUpFields')) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields'),
+  noSigningUpFields: Ember.computed(function () {
+    if (null != get$(this, 'signingUpFields')) {
+      return false;
+    } else {
+      return true;
+    }
+  }).property('signingUpFields'),
+  needName: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('name') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needNickname: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('nickname') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needStudentId: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('studentId') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needPhoneNumber: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('phone-number') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needEmail: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('email') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needSchool: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('school') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needDepartment: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('department') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needMajor: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('major') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  needGrade: Ember.computed(function () {
+    if ((null != get$(this, 'signingUpFields') ? get$(this, 'signingUpFields').indexOf('grade') : void 0) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('signingUpFields.@each'),
+  posterSrc: Ember.computed(function () {
+    return '/api/event/' + get$(this, 'id') + '/poster/load';
+  }).property('id'),
+  totalBudget: Ember.computed(function () {
+    var one, total;
+    total = 0;
+    if (null != get$(this, 'budgets'))
+      for (var i$ = 0, length$ = get$(this, 'budgets').length; i$ < length$; ++i$) {
+        one = get$(this, 'budgets')[i$];
+        total += get$(one, 'amount') * get$(one, 'number');
+      }
+    return total;
+  }).property('budgets'),
+  isLecture: Ember.computed(function () {
+    if (get$(this, 'category') === '\u8BB2\u5EA7') {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('category'),
+  isParty: Ember.computed(function () {
+    if (get$(this, 'category') === '\u805A\u4F1A') {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('category'),
+  isPerformance: Ember.computed(function () {
+    if (get$(this, 'category') === '\u6F14\u51FA') {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('category'),
+  isGame: Ember.computed(function () {
+    if (get$(this, 'category') === '\u8D5B\u4E8B') {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('category'),
+  isCommunity: Ember.computed(function () {
+    if (get$(this, 'category') === '\u516C\u76CA') {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('category'),
+  isRecruit: Ember.computed(function () {
+    if (get$(this, 'category') === '\u62DB\u65B0') {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('category'),
+  isOthers: Ember.computed(function () {
+    if (get$(this, 'category') === '\u5176\u5B83') {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('category')
 }));

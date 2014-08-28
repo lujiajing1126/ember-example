@@ -29,6 +29,9 @@ set$(Enterprise, 'ActShowRoute', get$(Em, 'Route').extend({
       return function (data) {
         if (get$(data, 'status') === 'OK') {
           console.log(data);
+          set$(get$(data, 'static'), 'id', act_id);
+          set$(get$(data, 'static'), 'begin', get$(get$(get$(data, 'static'), 'begin'), '$date'));
+          set$(get$(data, 'static'), 'end', get$(get$(get$(data, 'static'), 'end'), '$date'));
           return get$(this$, 'store').push('activity', get$(data, 'static'));
         } else if (get$(data, 'status') === 'Permission Denied') {
           get$(Em, 'RSVP').reject('Permission Denied');

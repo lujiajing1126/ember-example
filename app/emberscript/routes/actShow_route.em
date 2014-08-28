@@ -6,7 +6,10 @@ class Enterprise.ActShowRoute extends Em.Route
 		fields = ['name','stage','location','category','description','begin','end','numberOfPeople','numberOfPreservedSeats','organizationName','organizationId','signingUpFields','poster','images','attachments','targets','budgets']
 		Em.$.ajax(url:"/api/event/#{act_id}/load?session=#{session}&fields=#{fields.join(',')}").then (data)=>
 			if data.status is "OK"
-				console.log(data)
+				console.log data
+				data.static.id = act_id
+				data.static.begin = data.static.begin.$date
+				data.static.end = data.static.end.$date
 				@store.push 'activity',data.static
 			else if data.status is "Permission Denied"
 				Em.RSVP.reject "Permission Denied"
