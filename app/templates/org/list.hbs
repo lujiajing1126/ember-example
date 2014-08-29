@@ -4,12 +4,7 @@
 	<div class="content-title pull-left clearfix">
 		<div class="helper-font-24 theme-color">
 			<i class="fa fa-pencil"></i>
-			<span>现有社团（{{model.length}}）</span>
-			<label>本项目由</label>
-			<label class="theme-color">{{lastModifyUser}}</label>
-			<label>在</label>
-			<label class="theme-color">{{lastModifyTime}}</label>
-			<label>进行最后修改。</label>
+			<span>现有社团（{{organizations.length}}）</span>
 		</div>
 	</div>
 	<div class="pull-right clearfix">
@@ -25,24 +20,23 @@
 		<nav class="row no-margin nav-xx-label">
 			<div class="row">
 				<div class="col-xs-2">
-					<span class="theme-color">组织类型</span>
+					<span class="theme-color">社团目录</span>
 				</div>
 				<div class="col-xs-10">
 					<span class="xx-label active">全部</span>
-					<span class="xx-label">讲座</span>
-					<span class="xx-label">讲座</span>
-					<span class="xx-label">讲座</span>
-					<span class="xx-label">讲座</span>
+					{{#each assodirs}}
+					<span class="xx-label">{{name}}</span>
+					{{/each}}
 				</div>
 			</div>
 		</nav>
 		<section class="xx-list-content">
-			{{#if model.length}}
+			{{#if organizations.length}}
 			<div class="row no-margin">
-				{{#each}}
+				{{#each organizations}}
 				<div class="col-xs-6 no-padding">
 					<div class="xx-list-option org-option clearfix">
-						<div class="pull-left focus xx-logo" style="background-image:url({{org.logo}}),url(images/default/2.png);">
+						<div class="pull-left focus xx-logo" style="background-image:url({{logo}}),url(images/default/2.png);">
 							<div class="org-type-icon-wrapper right-bottom width30">
 								<div class="org-type-icon academic"></div>
 							</div>

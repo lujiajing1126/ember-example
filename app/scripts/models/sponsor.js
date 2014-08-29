@@ -3,7 +3,7 @@ var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'Sponsor', get$(DS, 'Model').extend({
   demanding: DS.attr('string'),
-  owner: DS.attr('number'),
+  owner: DS.belongsTo('org'),
   providing: DS.attr('string'),
   publicity: DS.attr('boolean'),
   timeOfRequest: DS.attr('date'),

@@ -1,6 +1,6 @@
 class Enterprise.Sponsor extends DS.Model
 	demanding: DS.attr("string")
-	owner: DS.attr("number")
+	owner: DS.belongsTo('org')
 	providing: DS.attr("string")
 	publicity: DS.attr("boolean")
 	timeOfRequest: DS.attr("date")
