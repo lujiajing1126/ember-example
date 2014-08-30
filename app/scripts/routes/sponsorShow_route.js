@@ -23,8 +23,9 @@ set$(Enterprise, 'SponsorShowRoute', get$(Em, 'Route').extend({
             set$(json, 'id', get$(json, 'file'));
             return json;
           });
-          this$.get('store').pushMany('requestAttachment', get$(get$(payload, 'sponsor'), 'requestAttachment'));
+          get$(this$, 'store').pushMany('requestAttachment', get$(get$(payload, 'sponsor'), 'requestAttachment'));
           set$(get$(payload, 'sponsor'), 'events', get$(payload, 'events'));
+          set$(get$(payload, 'sponsor'), 'organization', get$(payload, 'organization'));
           eventIds = get$(get$(payload, 'sponsor'), 'events').mapProperty('id');
           requestAttachmentIds = get$(get$(payload, 'sponsor'), 'requestAttachment').mapProperty('id');
           set$(get$(payload, 'sponsor'), 'events', eventIds);

@@ -15,7 +15,7 @@
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">发布赞助的组织</span>
-			<span class="form-control" name="title">{{owner}}</span>
+			{{#link-to 'org.show' organization.id class="form-control"}}{{organization.name}}{{/link-to}}
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">赞助需求</span>
@@ -58,13 +58,6 @@
 							{{/each}}
 						</div>
 					</div>
-					<div class="upload-file-control-wrapper">
-						<div class="control-btn-wrapper">
-							<label class="btn btn-xx-theme btn-sm" for="uploadAttachment" title="上传申请资料" data-toggle="tooltip" data-placement="top"> <i class="fa fa-plus"></i>
-							</label>
-							<input type="file" class="hide" id="uploadAttachment" />
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -86,13 +79,6 @@
 								</div>
 							</div>
 							{{/each}}
-						</div>
-					</div>
-					<div class="upload-file-control-wrapper">
-						<div class="control-btn-wrapper">
-							<span class="btn btn-xx-theme btn-sm" title="添加关联活动" data-xx-action="linkAct" data-toggle="tooltip" data-placement="top">
-								<i class="fa fa-plus"></i>
-							</span>
 						</div>
 					</div>
 				</div>
@@ -118,13 +104,6 @@
 								</div>
 							</div>
 							{{/each}}
-						</div>
-					</div>
-					<div class="upload-file-control-wrapper">
-						<div class="control-btn-wrapper">
-							<span class="btn btn-xx-theme btn-sm" title="添加申请认证组织" data-xx-action="certificationModal" data-toggle="tooltip" data-placement="top">
-								<i class="fa fa-plus"></i>
-							</span>
 						</div>
 					</div>
 				</div>

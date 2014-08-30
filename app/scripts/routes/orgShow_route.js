@@ -3,6 +3,24 @@ var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'OrgShowRoute', Ember.Route.extend({
   model: function (params) {
-    return get$(this, 'store').find('org', get$(params, 'org_id'));
+    var fields, session;
+    session = localStorage.getItem('xiaoxiao:session');
+    fields = [
+      'organizationInfo.id',
+      'organizationInfo.name',
+      'organizationInfo.parent',
+      'organizationInfo.email',
+      'organizationInfo.contact',
+      'organizationInfo.description',
+      'extendedOrganizationInfo.type',
+      'extendedOrganizationInfo.credit',
+      'dynamic.numberOfMembers',
+      'dynamic.numberOfFollowers',
+      'dynamic.numberOfEvents',
+      'dynamic.roleType'
+    ];
+    return get$(Em, '$').ajax({ url: '/api/org/' + get$(params, 'org_id') + '/info?session=' + session + '&fields=' + fields.join(',') }).then(function (data) {
+      return console.log(data);
+    });
   }
 }));

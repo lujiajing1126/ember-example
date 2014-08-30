@@ -9,8 +9,9 @@ class Enterprise.SponsorShowRoute extends Em.Route
 				payload.sponsor.requestAttachment.map (json)->
 					json.id = json.file
 					json
-				@get('store').pushMany 'requestAttachment',payload.sponsor.requestAttachment
+				@store.pushMany 'requestAttachment',payload.sponsor.requestAttachment
 				payload.sponsor.events = payload.events
+				payload.sponsor.organization = payload.organization
 				eventIds = payload.sponsor.events.mapProperty('id')
 				requestAttachmentIds = payload.sponsor.requestAttachment.mapProperty('id')
 				payload.sponsor.events = eventIds
