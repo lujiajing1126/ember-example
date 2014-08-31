@@ -8,7 +8,11 @@
 
   Enterprise.Auth = Ember.Object.create();
 
-  Enterprise.ApplicationSerializer = DS.ActiveModelSerializer.extend();
+  Enterprise.ApplicationSerializer = DS.LSSerializer.extend();
+
+  Enterprise.ApplicationAdapter = DS.LSAdapter.extend({
+    namespace: 'xiaoxiao'
+  });
 
   Em.RSVP.configure('onerror', function(error) {
     return Em.Logger.assert(false, error);

@@ -9,6 +9,6 @@ set$(Enterprise, 'AssodirSerializer', get$(Enterprise, 'ApplicationSerializer').
       console.log(json);
       return set$(json, 'id', get$(json, 'name'));
     });
-    return this._super(store, type, { assodir: assodirs });
+    return this._super(store, type, assodirs);
   }
 }));

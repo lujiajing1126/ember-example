@@ -1,4 +1,4 @@
 class Enterprise.User extends DS.Model
-	username: DS.attr('string')
+	username: DS.attr('string', defaultValue: '您还没起名呢')
 	session: DS.attr('string')
-	orgs: DS.hasMany('org')
+	org: DS.belongsTo('org')

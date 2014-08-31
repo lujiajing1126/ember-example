@@ -6,7 +6,11 @@ set$(Enterprise, 'Org', get$(DS, 'Model').extend({
   name: DS.attr('string'),
   roleType: DS.attr('string'),
   user: DS.belongsTo('user'),
+  assodir: DS.belongsTo('assodir'),
   orgLogo: Ember.computed(function () {
     return '/api/org/' + get$(this, 'id') + '/logo';
+  }).property('id'),
+  orgPage: Ember.computed(function () {
+    return '/organization.html?oid=' + get$(this, 'id');
   }).property('id')
 }));

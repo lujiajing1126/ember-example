@@ -19,20 +19,20 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right helper-font-16">
             <li id="mailboxButton">
-                <a data-xx-action="toggle">
+                <a {{action 'expandMailbox'}}>
                     <span class="fa fa-inbox fa-lg"></span>
                     Mailbox
-                    <span id="badgemessagenum" class="badge">3</span>
+                    <span id="badgemessagenum" class="badge">0</span>
                 </a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img data-src="holder.js/20x20" alt="头像" src="" />
-                    {{userNickName}} <b class="caret"></b>
+                    {{user.username}} <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu card">
                     <li>
-                        {{#link-to 'profile'}}个人设置{{/link-to}}
+                        {{#link-to 'setting.profile'}}企业信息设置{{/link-to}}
                     </li>
                     <li class="underscore">
                         {{#link-to 'logout'}}退出登陆{{/link-to}}

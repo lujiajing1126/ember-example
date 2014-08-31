@@ -71,7 +71,7 @@ module.exports = function (grunt) {
                         jquery: 'app/bower_components/jquery/dist/jquery.min.js',
                         ember: 'app/bower_components/ember/ember.min.js',
                         emblem: 'app/bower_components/emblem/dist/emblem.min.js',
-                        handlebars: 'app/bower_components/handlebars/handlebars.js'
+                        handlebars: 'app/bower_components/handlebars/handlebars.js',
                     }
                 }
             }
@@ -265,7 +265,8 @@ module.exports = function (grunt) {
             options: {
               variables: {
                 ember: 'bower_components/ember/ember.js',
-                ember_data: 'bower_components/ember-data/ember-data.js'
+                ember_data: 'bower_components/ember-data/ember-data.js',
+                ember_localstorage_adapter: 'bower_components/ember-localstorage-adapter/localstorage_adapter.js'
                 }
             },
             files: [

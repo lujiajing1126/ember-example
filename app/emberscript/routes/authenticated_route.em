@@ -7,3 +7,10 @@ class Enterprise.AuthenticatedRoute extends Ember.Route
 		else
 			applicationController.set 'savedTransition', transition
 			@transitionTo 'login'
+	actions:
+		expandMailbox: ->
+			alert 'expand'
+	model: ->
+		Enterprise.Auth
+	setupController: (controller,model)->
+		controller.set 'model',model

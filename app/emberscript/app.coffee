@@ -2,9 +2,16 @@ Enterprise = window.Enterprise = Ember.Application.create
 	LOG_TRANSITIONS: true
 	HOST: 'http://localhost/api'
 
+# 应该记录企业信息，不应该记录个人信息
 Enterprise.Auth = Ember.Object.create()
 
-Enterprise.ApplicationSerializer = DS.ActiveModelSerializer.extend()
+# 用户ID也要保存
+# localStorage xiaoxiao:userId
+# localStorage xiaoxiao:session
+
+Enterprise.ApplicationSerializer = DS.LSSerializer.extend()
+Enterprise.ApplicationAdapter = DS.LSAdapter.extend
+	namespace: 'xiaoxiao'
 
 Em.RSVP.configure 'onerror', (error) ->
 	Em.Logger.assert(false, error)

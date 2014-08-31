@@ -2,7 +2,7 @@
 var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'User', get$(DS, 'Model').extend({
-  username: DS.attr('string'),
+  username: DS.attr('string', { defaultValue: '\u60A8\u8FD8\u6CA1\u8D77\u540D\u5462' }),
   session: DS.attr('string'),
-  orgs: DS.hasMany('org')
+  org: DS.belongsTo('org')
 }));

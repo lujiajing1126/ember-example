@@ -7,11 +7,18 @@
       this.resource('logout');
       this.resource('home');
       this.resource('setting', function() {
-        this.resource('profile');
-        return this.resource('password');
+        this.route('profile', {
+          path: '/profile'
+        });
+        return this.route('password', {
+          path: '/password'
+        });
       });
       this.resource('org', function() {
         this.route('list');
+        this.route('search', {
+          path: 'search/:assodir_id'
+        });
         return this.route('show', {
           path: '/:org_id'
         });

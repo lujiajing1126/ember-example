@@ -5,7 +5,6 @@ set$(Enterprise, 'LoginRoute', Ember.Route.extend({
   actions: {
     login: function () {
       var columnName, formData, loginController, password, username;
-      console.log('login actions');
       formData = {};
       loginController = this.controllerFor('login');
       username = loginController.get('email');
@@ -35,7 +34,6 @@ set$(Enterprise, 'LoginRoute', Ember.Route.extend({
                   applicationController = this$1.controllerFor('application');
                   transition = applicationController.get('savedTransition');
                   applicationController.login();
-                  transition = applicationController.get('savedTransition');
                   if (transition && get$(transition, 'targetName') !== 'authenticated.index') {
                     return transition.retry();
                   } else {

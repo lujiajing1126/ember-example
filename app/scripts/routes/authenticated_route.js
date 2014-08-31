@@ -12,5 +12,16 @@ set$(Enterprise, 'AuthenticatedRoute', Ember.Route.extend({
       applicationController.set('savedTransition', transition);
       return this.transitionTo('login');
     }
+  },
+  actions: {
+    expandMailbox: function () {
+      return alert('expand');
+    }
+  },
+  model: function () {
+    return get$(Enterprise, 'Auth');
+  },
+  setupController: function (controller, model) {
+    return controller.set('model', model);
   }
 }));

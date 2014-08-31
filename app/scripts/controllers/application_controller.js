@@ -29,30 +29,30 @@ set$(Enterprise, 'ApplicationController', Ember.ArrayController.extend({
       return function (data) {
         if (get$(data, 'status') === 'OK') {
           set$(userData, 'dynamic', userData);
-          return Ember.$.ajax({
+          return get$(Em, '$').ajax({
             url: '/api/account/list_administrated_organizations?session=' + session,
             dataType: 'json'
           }).then(function (this$1) {
             return function (data) {
-              var organizations, orgData, orgSerializer, orgsId, user, userSerializer;
+              var organization, OrganizationData, organizations, orgId, user, userSerializer;
               userSerializer = this$1.get('store').serializerFor('user');
-              orgsId = get$(data, 'organizations').mapProperty('id');
+              orgId = get$(get$(data, 'organizations')[0], 'id');
               userData = userSerializer.extract(this$1.get('store'), get$(Enterprise, 'User'), {
                 user: {
                   id: userId,
                   session: session,
-                  orgs: orgsId
+                  org: orgId
                 }
               }, userId, 'find');
-              user = this$1.get('store').push('user', userData);
-              orgSerializer = this$1.get('store').serializerFor('org');
+              user = this$1.get('store').push('user', get$(userData, 'user'));
               organizations = get$(data, 'organizations').map(function (json) {
                 set$(json, 'user', userId);
                 return json;
               });
-              orgData = orgSerializer.extractArray(this$1.get('store'), get$(Enterprise, 'Org'), organizations);
-              this$1.get('store').pushMany('org', orgData);
+              organization = organizations[0];
+              OrganizationData = this$1.get('store').push('org', organization);
               get$(Enterprise, 'Auth').set('user', user);
+              get$(Enterprise, 'Auth').set('ent', OrganizationData);
               return this$1.set('savedTransition', null);
             };
           }(this$));

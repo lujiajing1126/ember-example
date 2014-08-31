@@ -5,10 +5,11 @@ Enterprise.Router.map ->
 		@resource 'logout'
 		@resource 'home'
 		@resource 'setting', ->
-			@resource 'profile'
-			@resource 'password'
+			@route 'profile', path: '/profile'
+			@route 'password', path: '/password'
 		@resource 'org',->
 			@route 'list'
+			@route 'search', path: 'search/:assodir_id'
 			@route 'show', path:'/:org_id'
 		@resource 'act',->
 			@route 'list'
