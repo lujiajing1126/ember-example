@@ -1,4 +1,4 @@
-class Enterprise.LoginRoute extends Ember.Route
+Enterprise.LoginRoute = Em.Route.extend
 	actions:
 		login: ->
 			formData = {}
@@ -9,7 +9,7 @@ class Enterprise.LoginRoute extends Ember.Route
 			formData[columnName] = username
 			formData['password'] = password
 			# 获取Session
-			Ember.$.ajax({url: '/api/session/create', dataType: 'json',type:'post'}).then (data) =>
+			Ember.$.ajax( url: '/api/session/create', dataType: 'json',type:'post' ).then (data) =>
 				if data.status is "OK"
 					formData['session'] = data.session
 					# 登陆验证逻辑
@@ -36,3 +36,6 @@ class Enterprise.LoginRoute extends Ember.Route
 						else
 							# 登陆失败
 							Notifier.error '您输入的用户名或密码不正确'
+					, -> Notifier.error 'WebService Error'
+			, -> 
+				Notifier.error 'WebService Error'

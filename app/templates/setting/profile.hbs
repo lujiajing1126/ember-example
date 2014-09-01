@@ -21,24 +21,20 @@
 			<span type="text" class="form-control" name="name" id="A_NAME">{{name}}</span>
 		</div>
 		<div class="input-group">
+			<span class="input-group-addon theme-color">企业地址</span>
+			{{input value=address class='form-control'}}
+		</div>
+		<div class="input-group">
 			<span class="input-group-addon theme-color">联系邮箱</span>
-			<span class="form-control" name="email" id="A_Email">{{email}}</span>
+			<input type="text" class="form-control" name="email" id="A_Email" />
+		</div>
+		{{file-upload fieldName='企业Logo'}}
+		<div class="input-group">
+			<span class="input-group-addon theme-color">企业简介</span>
+			{{textarea value=description cols="10" rows="6" class='form-control'}}
 		</div>
 		<div class="input-group">
-			<span class="input-group-addon theme-color">自己为联系人</span>
-			<div class="form-control">
-				<label class="xx-input-label">
-					<input type="radio" class="xx-input" name="contact" value="1" />
-					<span>是</span>
-				</label>
-				<label class="xx-input-label">
-					<input type="radio" class="xx-input" name="contact" value="0" checked />
-					<span>否</span>
-				</label>
-			</div>
-		</div>
-		<div class="input-group">
-			<span class="input-group-addon theme-color">企业赞助类型</span>
+			<span class="input-group-addon theme-color">赞助活动偏好</span>
 			<div class="form-control">
 				<label class="xx-input-inline">
 					<input type="radio" class="xx-input" name="type" value="学术" checked />
@@ -67,30 +63,69 @@
 			</div>
 		</div>
 		<div class="input-group">
-			<span class="input-group-addon theme-color">企业Logo</span>
+			<span class="input-group-addon theme-color">赞助学校偏好</span>
 			<div class="form-control">
-				<div class="upload-file-box org-logo-box">
-					<div class="pull-left upload-file-wrapper">
-						<div class="activity-img">
-							<img id="orgLogo" src="" />
-						</div>
-					</div>
-					<div class="upload-file-control-wrapper">
-						<div class="control-btn-wrapper">
-							<label class="btn btn-xx-theme btn-sm" for="uploadLogo" data-toggle="tooltip" data-placement="top" data-original-title="上传Logo"> <i class="fa fa-plus"></i>
-							</label>
-							<input type="file" accept="image/*" class="hide" id="uploadLogo" name="uploadPoster" autocomplete="off" />
-						</div>
-					</div>
-				</div>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="学术" checked />
+					<span>学术</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="艺术" checked />
+					<span>艺术</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="体育" checked />
+					<span>体育</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="实践" checked />
+					<span>实践</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="公益" checked />
+					<span>公益</span>
+				</label>
+				<label class="xx-input-inline">
+					<input type="radio" class="xx-input" name="type" value="其他" checked />
+					<span>其他</span>
+				</label>
 			</div>
 		</div>
 		<div class="input-group">
-			<span class="input-group-addon theme-color">组织简介</span>
-			<textarea class="form-control" name="description" id="A_Introduction" rows="6" placeholder="快来介绍一下你的组织吧。" data-validate-type="input" data-validate-rule="require" data-tips="组织简介不能为空！"></textarea>
+			<span class="input-group-addon theme-color">赞助金额</span>
+			{{input value=targetMoney class='form-control'}}
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">期望赞助人数</span>
+			{{input value=peopleNumber class='form-control'}}
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">受众对象</span>
+			<span type="text" class="form-control" name="name" id="A_NAME">{{name}}</span>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">赞助时间段</span>
+			<span type="text" class="form-control" name="name" id="A_NAME">{{name}}</span>
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon theme-color">赞助形式</span>
+			<div class="form-control">
+				<label class="xx-input-inline">
+					{{input type="checkbox" name="现金" checked=isMoney class='xx-input'}}
+					<span>现金</span>
+				</label>
+				<label class="xx-input-inline">
+					{{input type="checkbox" name="现金" checked=isGood class='xx-input'}}
+					<span>物资</span>
+				</label>
+				<label class="xx-input-inline">
+					{{input type="checkbox" name="技术" checked=isTech class='xx-input'}}
+					<span>技术</span>
+				</label>
+			</div>
 		</div>
 		<div class="form-group form-submit-group">
-			<button class="btn btn-xx-theme" id="BTN_SAVE">保存</button>
+			<button class="btn btn-xx-theme" {{action 'saveInfo'}}>保存</button>
 		</div>
 	</form>
 </div>

@@ -129,7 +129,7 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
-            server: '.tmp'
+            server: ['.tmp','<%= yeoman.app %>/scripts/*']
         },
         jshint: {
             options: {
@@ -321,9 +321,9 @@ module.exports = function (grunt) {
         coffee: {
             server: {
                 expand: true,
-                flatten: true,
+                flatten: false,
                 cwd: 'app/emberscript',
-                src: ['*.coffee'],
+                src: ['*.coffee','**/*.coffee'],
                 dest: 'app/scripts',
                 ext: '.js'
             }

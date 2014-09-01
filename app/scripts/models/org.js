@@ -7,6 +7,11 @@ set$(Enterprise, 'Org', get$(DS, 'Model').extend({
   roleType: DS.attr('string'),
   user: DS.belongsTo('user'),
   assodir: DS.belongsTo('assodir'),
+  address: DS.attr('string'),
+  targetMoney: DS.attr('number'),
+  targetEvent: DS.attr(),
+  targetAudience: DS.attr(),
+  peopleNumber: DS.attr('number'),
   orgLogo: Ember.computed(function () {
     return '/api/org/' + get$(this, 'id') + '/logo';
   }).property('id'),

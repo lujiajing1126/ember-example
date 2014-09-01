@@ -1,4 +1,4 @@
-class Enterprise.ApplicationController extends Ember.ArrayController
+Enterprise.ApplicationController = Em.ArrayController.extend
 	# when a user enters the app unauthenticated, the transition
 	# to where they are going is saved off so it can be retried
 	# when they have logged in.
@@ -27,6 +27,9 @@ class Enterprise.ApplicationController extends Ember.ArrayController
 					Enterprise.Auth.set 'user', user
 					Enterprise.Auth.set 'ent', OrganizationData
 					@set 'savedTransition', null
+		, => 
+			alert 'WebService Error'
+			@transitionToRoute 'login'
 	logout: ->
 		localStorage.setItem 'xiaoxiao:currentUserID', null
 		localStorage.setItem 'xiaoxiao:session', null

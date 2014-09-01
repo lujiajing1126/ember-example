@@ -4,6 +4,11 @@ class Enterprise.Org extends DS.Model
 	roleType: DS.attr('string')
 	user: DS.belongsTo('user')
 	assodir: DS.belongsTo('assodir')
+	address: DS.attr('string')
+	targetMoney: DS.attr('number')
+	targetEvent: DS.attr()
+	targetAudience: DS.attr()
+	peopleNumber: DS.attr('number')
 	orgLogo: ~>
 		"/api/org/#{@id}/logo"
 	orgPage: ~>

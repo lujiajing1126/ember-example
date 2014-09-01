@@ -3,7 +3,19 @@ var set$ = Ember.set;
 var get$ = Ember.get;
 set$(Enterprise, 'LogoutRoute', Ember.Route.extend({
   setupController: function () {
-    this.controllerFor('application').logout();
-    return this.transitionTo('login');
+    var session;
+    session = localStorage.getItem('xiaoxiao:session');
+    return get$(Em, '$').ajax({
+      url: '/api/account/logout?session=' + session,
+      type: 'post',
+      dataType: 'json'
+    }).then(function (this$) {
+      return function (payload) {
+        if (get$(payload, 'status') === 'OK') {
+          this$.controllerFor('application').logout();
+          return this$.transitionTo('login');
+        }
+      };
+    }(this));
   }
 }));

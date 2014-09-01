@@ -5,15 +5,14 @@ set$(Enterprise, 'OrgSearchRoute', Ember.Route.extend({
   model: function (params) {
     var session;
     session = localStorage.getItem('xiaoxiao:session');
-    console.log(get$(params, 'assodir_id'));
     return get$(Em, '$').ajax({
-      url: '/api/assodir/search?session=' + session + '&name=' + get$(params, 'assodir_id') + '&skip=0&limit=10',
+      url: '/api/assodir/search?session=' + session + '&name&skip=0&limit=10',
       dataType: 'json'
     }).then(function (this$) {
       return function (payload) {
         var assodirData, assodirSerializer, firstAssodir;
         if (get$(payload, 'status') === 'OK') {
-          firstAssodir = get$(get$(payload, 'assodirs')[0], 'name');
+          firstAssodir = get$(params, 'assodir_id');
           assodirSerializer = get$(this$, 'store').serializerFor('assodir');
           assodirData = assodirSerializer.extractArray(this$.get('store'), get$(Enterprise, 'Assodir'), payload);
           get$(this$, 'store').pushMany('assodir', assodirData);
@@ -28,8 +27,8 @@ set$(Enterprise, 'OrgSearchRoute', Ember.Route.extend({
                 return set$(json, 'assodir', firstAssodir);
               });
               get$(this$1, 'store').pushMany('org', organizationsData);
-              organizationsData = get$(this$1, 'store').find('org', { assodir: firstAssodir });
               assodirData = get$(this$1, 'store').all('assodir');
+              console.log(organizationsData);
               return {
                 organizations: organizationsData,
                 assodirs: assodirData
@@ -46,8 +45,5 @@ set$(Enterprise, 'OrgSearchRoute', Ember.Route.extend({
     chDir: function (name) {
       return console.log(name);
     }
-  },
-  renderTemplate: function () {
-    return this.render('org/list');
   }
 }));
