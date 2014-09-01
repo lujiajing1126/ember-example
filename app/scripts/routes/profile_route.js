@@ -7,5 +7,8 @@ set$(Enterprise, 'SettingProfileRoute', get$(Em, 'Route').extend({
   },
   setupController: function (controller, model) {
     return controller.set('model', model);
+  },
+  renderTemplate: function () {
+    return this.render();
   }
 }));

@@ -9,11 +9,57 @@ set$(Enterprise, 'Org', get$(DS, 'Model').extend({
   assodir: DS.belongsTo('assodir'),
   address: DS.attr('string'),
   targetMoney: DS.attr('number'),
-  targetEvent: DS.attr(),
-  targetAudience: DS.attr(),
+  targetEvent: DS.attr('string'),
+  targetAudience: DS.attr('string'),
+  targetSchools: DS.attr('string'),
   peopleNumber: DS.attr('number'),
   email: DS.attr('string'),
   description: DS.attr('string'),
+  begin: DS.attr('date'),
+  end: DS.attr('date'),
+  sponsorForm: DS.attr('string'),
+  wantXS: Ember.computed(function () {
+    if (null != get$(this, 'targetEvent') && get$(this, 'targetEvent').indexOf('wantXS') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('targetEvent', 'targetEvent.@each'),
+  wantYS: Ember.computed(function () {
+    if (null != get$(this, 'targetEvent') && get$(this, 'targetEvent').indexOf('wantYS') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('targetEvent', 'targetEvent.@each'),
+  wantTY: Ember.computed(function () {
+    if (null != get$(this, 'targetEvent') && get$(this, 'targetEvent').indexOf('wantTY') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('targetEvent', 'targetEvent.@each'),
+  wantSJ: Ember.computed(function () {
+    if (null != get$(this, 'targetEvent') && get$(this, 'targetEvent').indexOf('wantSJ') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('targetEvent', 'targetEvent.@each'),
+  wantQT: Ember.computed(function () {
+    if (null != get$(this, 'targetEvent') && get$(this, 'targetEvent').indexOf('wantQT') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('targetEvent', 'targetEvent.@each'),
+  wantGY: Ember.computed(function () {
+    if (null != get$(this, 'targetEvent') && get$(this, 'targetEvent').indexOf('wantGY') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('targetEvent', 'targetEvent.@each'),
   orgLogo: Ember.computed(function () {
     return '/api/org/' + get$(this, 'id') + '/logo';
   }).property('id'),
@@ -22,5 +68,26 @@ set$(Enterprise, 'Org', get$(DS, 'Model').extend({
   }).property('id'),
   uploadUri: Ember.computed(function () {
     return '/api/org/' + get$(this, 'id') + '/set_logo';
-  }).property('id')
+  }).property('id'),
+  isGood: Ember.computed(function () {
+    if (null != get$(this, 'sponsorForm') && get$(this, 'sponsorForm').indexOf('isGood') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('sponsorForm', 'sponsorForm.@each'),
+  isTech: Ember.computed(function () {
+    if (null != get$(this, 'sponsorForm') && get$(this, 'sponsorForm').indexOf('isTech') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('sponsorForm', 'sponsorForm.@each'),
+  isMoney: Ember.computed(function () {
+    if (null != get$(this, 'sponsorForm') && get$(this, 'sponsorForm').indexOf('isMoney') !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }).property('sponsorForm', 'sponsorForm.@each')
 }));

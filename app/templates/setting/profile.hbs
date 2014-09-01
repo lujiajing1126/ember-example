@@ -38,59 +38,34 @@
 			<span class="input-group-addon theme-color">赞助活动偏好</span>
 			<div class="form-control">
 				<label class="xx-input-inline">
-					{{input type="checkbox" name="sponsorForm[]" value='学术' checked=isMoney class='xx-input'}}
+					{{input type="checkbox" name="targetEvent" checked=wantXS class='xx-input'}}
 					<span>学术</span>
 				</label>
 				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="艺术" checked />
+					{{input type="checkbox" name="targetEvent" checked=wantYS class='xx-input'}}
 					<span>艺术</span>
 				</label>
 				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="体育" checked />
+					{{input type="checkbox" name="targetEvent" checked=wantTY class='xx-input'}}
 					<span>体育</span>
 				</label>
 				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="实践" checked />
+					{{input type="checkbox" name="targetEvent" checked=wantSJ class='xx-input'}}
 					<span>实践</span>
 				</label>
 				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="公益" checked />
+					{{input type="checkbox" name="targetEvent" checked=wantGY class='xx-input'}}
 					<span>公益</span>
 				</label>
 				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="其他" checked />
+					{{input type="checkbox" name="targetEvent" checked=wantQT class='xx-input'}}
 					<span>其他</span>
 				</label>
 			</div>
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">赞助学校偏好</span>
-			<div class="form-control">
-				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="学术" checked />
-					<span>学术</span>
-				</label>
-				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="艺术" checked />
-					<span>艺术</span>
-				</label>
-				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="体育" checked />
-					<span>体育</span>
-				</label>
-				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="实践" checked />
-					<span>实践</span>
-				</label>
-				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="公益" checked />
-					<span>公益</span>
-				</label>
-				<label class="xx-input-inline">
-					<input type="radio" class="xx-input" name="type" value="其他" checked />
-					<span>其他</span>
-				</label>
-			</div>
+			{{input value=targetSchools class='form-control'}}
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">赞助金额</span>
@@ -102,24 +77,14 @@
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">受众对象</span>
-			<span type="text" class="form-control" name="name" id="A_NAME">{{name}}</span>
+			{{input value=targetAudience class='form-control'}}
 		</div>
 		<div class="input-group">
 			<span class="input-group-addon theme-color">赞助时间段</span>
 			<div class="form-control">
 				<div class="form-inline">
-					<div class="form-group" >
-						<div class="input-group width-140" >
-							<span class="input-group-addon theme-color">从</span>
-							{{input class='form-control datetimepicker' name='begin' value=begin}}
-						</div>
-					</div>
-					<div class="form-group" >
-						<div class="input-group width-140" >
-							<span class="input-group-addon theme-color">至</span>
-							{{input class='form-control datetimepicker' name='end' value=end}}
-						</div>
-					</div>
+					{{datetime-picker fieldName='从' time=begin}}
+					{{datetime-picker fieldName='至' time=end}}
 				</div>
 			</div>
 		</div>
@@ -127,15 +92,15 @@
 			<span class="input-group-addon theme-color">赞助形式</span>
 			<div class="form-control">
 				<label class="xx-input-inline">
-					{{input type="checkbox" name="sponsorForm[]" checked=isMoney class='xx-input'}}
+					{{input type="checkbox" name="sponsorForm" checked=isMoney class='xx-input'}}
 					<span>现金</span>
 				</label>
 				<label class="xx-input-inline">
-					{{input type="checkbox" name="sponsorForm[]" checked=isGood class='xx-input'}}
+					{{input type="checkbox" name="sponsorForm" checked=isGood class='xx-input'}}
 					<span>物资</span>
 				</label>
 				<label class="xx-input-inline">
-					{{input type="checkbox" name="sponsorForm[]" checked=isTech class='xx-input'}}
+					{{input type="checkbox" name="sponsorForm" checked=isTech class='xx-input'}}
 					<span>技术</span>
 				</label>
 			</div>

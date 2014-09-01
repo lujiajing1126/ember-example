@@ -3,3 +3,5 @@ class Enterprise.SettingProfileRoute extends Em.Route
 		Enterprise.Auth.get 'ent'
 	setupController: (controller,model)->
 		controller.set 'model',model
+	renderTemplate: ->
+		@render()

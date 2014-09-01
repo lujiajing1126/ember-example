@@ -147,7 +147,7 @@ module.exports = function (grunt) {
             all: {
                 options: {
                     run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
+                    urls: ['http://localhost:<%= connect.options.port %>/enterprise.html']
                 }
             }
         },
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
             dist: {}
         },*/
         // not enabled since usemin task does concat and uglify
-        // check index.html to edit your build targets
+        // check enterprise.html to edit your build targets
         // enable this task if you prefer defining your build targets here
         /*uglify: {
             dist: {}
@@ -197,7 +197,7 @@ module.exports = function (grunt) {
             }
         },
         useminPrepare: {
-            html: '.tmp/index.html',
+            html: '.tmp/enterprise.html',
             options: {
                 dest: '<%= yeoman.dist %>'
             }
@@ -270,18 +270,19 @@ module.exports = function (grunt) {
                 }
             },
             files: [
-              {src: '<%= yeoman.app %>/index.html', dest: '.tmp/index.html'}
+              {src: '<%= yeoman.app %>/enterprise.html', dest: '.tmp/enterprise.html'}
             ]
           },
           dist: {
             options: {
               variables: {
                 ember: 'bower_components/ember/ember.prod.js',
-                ember_data: 'bower_components/ember-data/ember-data.prod.js'
+                ember_data: 'bower_components/ember-data/ember-data.prod.js',
+                ember_localstorage_adapter: 'bower_components/ember-localstorage-adapter/localstorage_adapter.js'
               }
             },
             files: [
-              {src: '<%= yeoman.app %>/index.html', dest: '.tmp/index.html'}
+              {src: '<%= yeoman.app %>/enterprise.html', dest: '.tmp/enterprise.html'}
             ]
           }
         },

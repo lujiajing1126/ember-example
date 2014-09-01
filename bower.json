@@ -10,7 +10,8 @@
     "emblem": "~0.3.16",
     "moment": "~2.8.1",
     "notifier.js": "https://github.com/Srirangan/notifer.js.git#1.0.0",
-    "jquery-file-upload": "~9.7.0"
+    "jquery-file-upload": "~9.7.0",
+    "smalot-bootstrap-datetimepicker": "~2.3.1"
   },
   "devDependencies": {
     "ember-mocha-adapter": "0.1.2"
