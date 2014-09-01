@@ -17,5 +17,8 @@ set$(Enterprise, 'Org', get$(DS, 'Model').extend({
   }).property('id'),
   orgPage: Ember.computed(function () {
     return '/organization.html?oid=' + get$(this, 'id');
+  }).property('id'),
+  uploadUri: Ember.computed(function () {
+    return '/api/org/' + get$(this, 'id') + '/set_logo';
   }).property('id')
 }));

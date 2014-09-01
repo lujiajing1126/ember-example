@@ -4,8 +4,8 @@
 		<div class="upload-file-box org-logo-box">
 			<div class="pull-left upload-file-wrapper">
 				<div class="activity-img">
-					{{#if LogoSrc}}
-					<img id="orgLogo" {{bind-attr src=LogoSrc}} />
+					{{#if orgLogo}}
+					<img id="orgLogo" {{bind-attr src=orgLogo}} />
 					{{/if}}
 				</div>
 			</div>
@@ -14,7 +14,7 @@
 					<label class="btn btn-xx-theme btn-sm" for="uploadLogo" data-toggle="tooltip" data-placement="top" data-original-title="上传Logo">
 						<i class="fa fa-plus"></i>
 					</label>
-					<input type="file" accept="image/*" class="hide" id="uploadLogo" name="uploadPoster" autocomplete="off" />
+					<input type="file" accept="image/*" class="hide" id="uploadLogo" name="file" autocomplete="off" />
 				</div>
 			</div>
 		</div>

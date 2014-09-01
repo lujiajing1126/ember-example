@@ -13,3 +13,5 @@ class Enterprise.Org extends DS.Model
 		"/api/org/#{@id}/logo"
 	orgPage: ~>
 		"/organization.html?oid=#{@id}"
+	uploadUri: ~>
+		"/api/org/#{@id}/set_logo"

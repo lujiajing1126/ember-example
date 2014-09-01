@@ -18,6 +18,10 @@
     return Em.Logger.assert(false, error);
   });
 
+  Em.$.ajaxSetup({
+    timeout: 10000
+  });
+
   require('scripts/controllers/*');
 
   require('scripts/store');

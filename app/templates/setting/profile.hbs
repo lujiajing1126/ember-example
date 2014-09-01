@@ -28,7 +28,8 @@
 			<span class="input-group-addon theme-color">联系邮箱</span>
 			<input type="text" class="form-control" name="email" id="A_Email" />
 		</div>
-		{{file-upload fieldName='企业Logo'}}
+		{{! Custom File Upload Component}}
+		{{file-upload fieldName='企业Logo' url=uploadUri orgLogo=orgLogo}}
 		<div class="input-group">
 			<span class="input-group-addon theme-color">企业简介</span>
 			{{textarea value=description cols="10" rows="6" class='form-control'}}
