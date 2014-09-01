@@ -9,6 +9,8 @@ class Enterprise.Org extends DS.Model
 	targetEvent: DS.attr()
 	targetAudience: DS.attr()
 	peopleNumber: DS.attr('number')
+	email: DS.attr('string')
+	description: DS.attr('string')
 	orgLogo: ~>
 		"/api/org/#{@id}/logo"
 	orgPage: ~>

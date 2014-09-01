@@ -12,6 +12,8 @@ set$(Enterprise, 'Org', get$(DS, 'Model').extend({
   targetEvent: DS.attr(),
   targetAudience: DS.attr(),
   peopleNumber: DS.attr('number'),
+  email: DS.attr('string'),
+  description: DS.attr('string'),
   orgLogo: Ember.computed(function () {
     return '/api/org/' + get$(this, 'id') + '/logo';
   }).property('id'),

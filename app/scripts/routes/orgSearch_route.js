@@ -21,12 +21,14 @@ set$(Enterprise, 'OrgSearchRoute', Ember.Route.extend({
             dataType: 'json'
           }).then(function (this$1) {
             return function (payload) {
-              var organizationsData;
-              organizationsData = get$(payload, 'organizations');
-              organizationsData.map(function (json) {
+              var organizationsData, organizationSerializer, srcData;
+              srcData = get$(payload, 'organizations');
+              organizationSerializer = this$1.get('store').serializerFor('org');
+              srcData.map(function (json) {
                 return set$(json, 'assodir', firstAssodir);
               });
-              get$(this$1, 'store').pushMany('org', organizationsData);
+              organizationsData = organizationSerializer.extractArray(this$1.get('store'), get$(Enterprise, 'Org'), srcData);
+              organizationsData = get$(this$1, 'store').pushMany('org', organizationsData);
               assodirData = get$(this$1, 'store').all('assodir');
               console.log(organizationsData);
               return {

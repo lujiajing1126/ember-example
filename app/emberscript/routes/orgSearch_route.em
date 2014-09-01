@@ -8,10 +8,12 @@ class Enterprise.OrgSearchRoute extends Ember.Route
 				assodirData = assodirSerializer.extractArray @get('store'),Enterprise.Assodir,payload
 				@store.pushMany 'assodir',assodirData
 				Em.$.ajax(url: "/api/assodir/#{encodeURI(firstAssodir)}/load?session=#{session}",dataType:'json').then (payload)=>
-					organizationsData = payload.organizations
-					organizationsData.map (json)->
+					srcData = payload.organizations
+					organizationSerializer = @get('store').serializerFor 'org'
+					srcData.map (json)->
 						json.assodir = firstAssodir
-					@store.pushMany 'org',organizationsData
+					organizationsData = organizationSerializer.extractArray(@get('store'), Enterprise.Org, srcData)
+					organizationsData = @store.pushMany 'org',organizationsData
 					#organizationsData = @store.find 'org',assodir: firstAssodir
 					assodirData = @store.all 'assodir'
 					console.log organizationsData
