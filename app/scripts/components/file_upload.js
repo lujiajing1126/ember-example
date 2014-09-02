@@ -6,7 +6,6 @@
     progress: 0,
     didInsertElement: function() {
       var session;
-      console.log(this.url);
       session = Enterprise.Auth.user.get('session');
       return this.$('#uploadLogo').fileupload({
         url: this.url,

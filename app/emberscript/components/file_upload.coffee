@@ -5,7 +5,6 @@ Enterprise.FileUploadComponent = Ember.Component.extend
 	progress: 0
 
 	didInsertElement: ->
-		console.log @url
 		session = Enterprise.Auth.user.get('session')
 		@$('#uploadLogo').fileupload
 			url: @url

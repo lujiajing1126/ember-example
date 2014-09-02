@@ -63,10 +63,7 @@
 				</label>
 			</div>
 		</div>
-		<div class="input-group">
-			<span class="input-group-addon theme-color">赞助学校偏好</span>
-			{{input value=targetSchools class='form-control'}}
-		</div>
+		{{em-select fieldName='赞助学校偏好' placeholder='默认为全部' data=targetSchools}}
 		<div class="input-group">
 			<span class="input-group-addon theme-color">赞助金额</span>
 			{{input value=targetMoney class='form-control'}}
