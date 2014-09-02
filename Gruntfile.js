@@ -295,9 +295,10 @@ module.exports = function (grunt) {
                         flatten: true,
                         filter: 'isFile',
                         cwd: '<%= yeoman.app %>/bower_components/',
-                        dest: '<%= yeoman.app %>/styles/fonts/',
+                        dest: '<%= yeoman.app %>/fonts/',
                         src: [
-                            'bootstrap-sass-official/vendor/assets/fonts/bootstrap/**'
+                            'bootstrap-sass-official/vendor/assets/fonts/bootstrap/**',
+                            'font-awesome/fonts/**'
                         ]
                     }
                 ]
@@ -313,7 +314,7 @@ module.exports = function (grunt) {
                             '*.{ico,txt}',
                             '.htaccess',
                             'images/{,*/}*.{webp,gif}',
-                            'styles/fonts/*'
+                            'fonts/*'
                         ]
                     }
                 ]
