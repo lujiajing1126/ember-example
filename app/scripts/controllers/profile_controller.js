@@ -2,11 +2,14 @@
   Enterprise.SettingProfileController = Em.ObjectController.extend({
     actions: {
       saveInfo: function() {
-        var data, form, orgId, session, sponsorForm, target, targetEvent, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3;
+        var beginTime, data, endTime, form, orgId, session, sponsorForm, target, targetEvent, _i, _j, _len, _len1, _ref, _ref1, _ref2, _ref3;
         orgId = (_ref = Enterprise.Auth.ent) != null ? _ref.get('id') : void 0;
         session = (_ref1 = Enterprise.Auth.user) != null ? _ref1.get('session') : void 0;
         targetEvent = [];
         sponsorForm = [];
+        beginTime = ("" + this.get('begin')).indexOf('-') === -1 ? (+this.get('begin')) * 1000 : this.get('begin');
+        endTime = ("" + this.get('begin')).indexOf('-') === -1 ? (+this.get('end')) * 1000 : this.get('end');
+        console.log(this.get('end'));
         _ref2 = ['wantXS', 'wantYS', 'wantTY', 'wantSJ', 'wantQT', 'wantGY'];
         for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
           target = _ref2[_i];
@@ -33,8 +36,8 @@
               targetMoney: +this.get('targetMoney'),
               address: this.get('address'),
               targetEvent: targetEvent.join(','),
-              begin: moment(this.get('begin')).unix(),
-              end: moment(this.get('end')).unix(),
+              begin: moment(beginTime).unix(),
+              end: moment(endTime).unix(),
               sponsorForm: sponsorForm.join(','),
               targetAudience: this.get('targetAudience'),
               targetSchools: this.get('targetSchools')

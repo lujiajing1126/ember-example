@@ -5,10 +5,12 @@
     id: null,
     classNames: ['form-group'],
     didInsertElement: function() {
-      console.log(this.$().find('.datetimepicker').eq(0));
-      return this.$().find('.datetimepicker').eq(0).datetimepicker({
+      var $inputBox;
+      $inputBox = this.$().find('.datetimepicker').eq(0);
+      $inputBox.datetimepicker({
         format: 'yyyy-mm-dd'
       });
+      return $inputBox.val(moment($inputBox.val(), 'X').format('YYYY-MM-DD'));
     }
   });
 

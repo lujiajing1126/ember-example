@@ -4,6 +4,7 @@ Enterprise.DatetimePickerComponent = Ember.Component.extend
 	id: null
 	classNames: ['form-group']
 	didInsertElement: ->
-		console.log @$().find('.datetimepicker').eq(0)
-		@$().find('.datetimepicker').eq(0).datetimepicker
+		$inputBox = @$().find('.datetimepicker').eq(0)
+		$inputBox.datetimepicker
 			format: 'yyyy-mm-dd'
+		$inputBox.val(moment($inputBox.val(),'X').format('YYYY-MM-DD'))

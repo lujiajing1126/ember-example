@@ -5,6 +5,9 @@ Enterprise.SettingProfileController = Em.ObjectController.extend
 			session = Enterprise.Auth.user?.get('session')
 			targetEvent = []
 			sponsorForm = []
+			beginTime = if (""+@get('begin')).indexOf('-') == -1 then (+@get('begin'))*1000 else @get('begin')
+			endTime = if (""+@get('begin')).indexOf('-') == -1 then (+@get('end'))*1000 else @get('end')
+			console.log @get('end')
 			for target in ['wantXS','wantYS','wantTY','wantSJ','wantQT','wantGY']
 				targetEvent.push target if @get(target) is true
 			for form in ['isGood','isTech','isMoney']
@@ -20,8 +23,8 @@ Enterprise.SettingProfileController = Em.ObjectController.extend
 						targetMoney: + @get 'targetMoney'
 						address: @get 'address'
 						targetEvent: targetEvent.join(',')
-						begin: moment(@get('begin')).unix()
-						end: moment(@get('end')).unix()
+						begin: moment(beginTime).unix()
+						end: moment(endTime).unix()
 						sponsorForm: sponsorForm.join(',')
 						targetAudience: @get('targetAudience')
 						targetSchools: @get('targetSchools')
